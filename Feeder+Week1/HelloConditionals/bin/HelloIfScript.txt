@@ -1,0 +1,29 @@
+//package declaration can go here
+//any comment can be above the import as well
+
+import java.lang.*; //we don't need to do this - the .lang package is imported implicitly.
+
+public class Launcher {
+	
+	public static void main(String[] args) {
+		
+		double randomNumber = Math.random(); //generate a random double between 0-1.
+		
+		//we're gonna do some control flow with if statements on this random number
+		
+		System.out.println("Today's random number is: " + randomNumber);
+		
+		//if statement below---------------
+		//I want to print a different message based on what the random number is
+		
+		if (randomNumber > .75) {
+			System.out.println("randomNumber is greater than .75!");
+		} else if (randomNumber > .50) {
+			System.out.println("randomNumber is greater than .50 but less than .75!");
+		} else {
+			System.out.println("randomNumber is real small!");
+		}
+		
+	}
+	
+}
