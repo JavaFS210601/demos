@@ -1,0 +1,158 @@
+//package declaration can go here
+//any comment can be above the import as well
+
+import java.lang.Math; //we don't need to do this - the .lang package is imported implicitly.
+
+public class Launcher {
+	
+	public static void main(String[] args) {
+		
+		double randomNumber = Math.round(Math.random() * 100); //generate a random double between 1-100.
+		
+		//we're gonna do some control flow with if statements on this random number
+		
+		System.out.println("Today's random number is: " + randomNumber);
+		
+		//if statement below---------------
+		//I want to print a different message based on what the random number is
+		
+		if (randomNumber > 75) {
+			System.out.println("randomNumber is greater than 75!");
+		} else if (randomNumber > 50) {
+			System.out.println("randomNumber is greater than 50 but less than 75!");
+		} else {
+			System.out.println("randomNumber is real small!");
+		}
+		
+		
+		System.out.println("===============================================(While loop)");
+		
+		//While loops evaluate a boolean, and if true, run a block of code. 
+		//If the boolean remains true, run the block of code again... forevermore (or until false)
+		
+		int smallNum = 5;
+		
+		while (smallNum < 500) {
+			System.out.println("In the while loop");
+			
+			System.out.println("smallNum is equal to: " + smallNum);
+			smallNum += 100; //same as smallNum = smallNum + 100;
+			System.out.println("smallNum has increased to: " + smallNum);
+		}
+		
+		System.out.println("While loop complete!");
+		
+		
+		System.out.println("=================================(Do-While Loops)");
+		
+		//Do-While loops run a block FIRST, then evaluates a boolean
+		//then it pretty much works like a regular while loop
+		//so we use these when we want the code to run once before evaluation
+		//a Do-While loop while always run its code block at least once.		
+		
+		do {
+			System.out.println("Inside the Do-while loop... I run before the boolean is tested!");
+			smallNum += 10;
+			System.out.println("SmallNum is equal to: " + smallNum);
+		} while (smallNum == 500);
+		
+		
+		System.out.println("==============================(For Loop 1)");
+		
+		//For loops are used for iteration (moving through a series of values)
+		//They contain three parts (in this order):
+		//declaration - creates a variable in the block's scope
+		//condition - a statement that resolves to a boolean, checked each time the loop runs
+		//statement - code that runs at the end of each iteration
+		
+		int loopVictim = 0;
+		
+		//"for as long as this int, which starts at zero, is less than 10, increment it by 1 per loop"
+		for (int i = 0; i < 10; i++) {
+			loopVictim += 5;
+			System.out.println("Our loop victim is now: " + loopVictim);
+			System.out.println("Our loop variable is now: " + i);
+			//Notice that "Our loop variable is now: 10" never gets printed.
+			//Since the loop breaks once i < 10 = false.
+		}
+		
+		//The loop executes its code 10 (i = 0-9) times. Once i = 10, the loop completes and stops.
+		
+		
+		System.out.println("==============================(For Loop 2)");
+		
+	//More complicated use of for loops below...
+		
+		//This is an Array... which we'll talk about later
+		char[] myName = {'B', 'E', ' ', 'N', 'A', 'A', 'A', 'P'};
+		
+		System.out.println(myName); //print our char[] as is, without processing
+		
+		System.out.println("the array is " + myName.length + " chars long"); 
+		//this will print the length of the char
+		//the .length attribute returns the length of the array, very useful as we'll see below
+		
+		//Let's use some control flow to clean up the char[] to just have my name. 
+		
+		//First, I want to iterate through the char[], and only print out the letters in my name
+		for(int i = 0; i < myName.length; i++) {
+			
+			//Arrays have what are called "indexes", which is just the place of each value
+			if (myName[i] == ' ' || myName[i] == 'A') {
+				continue;
+				//isn't using short circuit or (||) much cleaner than two if statements?
+			}
+			
+			//this print statement will only print the letters I want
+			System.out.println(myName[i] + " at index " + i); 
+		}
+		
+		//Note that our original char[] never changed! We're just manipulating what got printed
+		System.out.println(myName);	
+		
+		
+		System.out.println("==============================(ENHANCED For Loop)");
+
+		
+		//An enhanced for loop is just a fancy shorthand syntax to loop through stuff
+		
+		String[] names = {"Delone", "Jonte", "Dave", "Najee", "Nahom", "Supreme Overlord Benjamin"};
+		
+		//"For every String (which we'll call s) in the array called names...
+		//Print out the current String
+		for(String s : names) {
+			System.out.println(s + " is here!");
+		}
+		
+		//I was trying to kill a good 10 minutes, but since enhanced for loops are so efficient...
+		//It only 5 :( 
+		
+	}
+}
+
+
+/*
+ * Many control flow statements based on boolean expressions
+ * Thus, there are a lot of symbols that provide different functionality.
+ * 
+ * == checks equality
+ * <, >, <=, >= are the standard comparison operators
+ * ! reverses a boolean (eg. !true is the same false)
+ * 
+ * & and && returns true only if the boolean expression on either side are both true
+ * | and || returns true if either expression is true
+ * 
+ * && and || are "short circuit" operators. 
+ * 
+ * If the left expression in && is false, Java knows that the && will fail.. 
+ * so it won't bother evaluating the right expression
+ * 
+ * Similarly, if the left expression in || is true, Java knows that the || will pass...
+ * so it won't bother evaluating the right expression.
+ * 
+ * Thus, I always use the short circuits and hardly ever use the singular ones.
+ * 
+ */
+
+
+
