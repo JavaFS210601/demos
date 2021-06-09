@@ -41,7 +41,7 @@ public class Launcher {
 		//so single unicode value can be a char. 
 		//chars are typically between single quotes (double quotes would be a String)
 		
-		char c = 'a';
+		char c = 'a'; //2 bytes in size
 		char c2 = '$';
 		char c3 = '3';
 		char c4 = 65; //Will print out uppercase A
