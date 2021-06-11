@@ -2,12 +2,16 @@ package com.revature.models;
 
 public class Pokemon {
 
+	//these are the fields of the Pokemon class
 	String name;
 	String type;
 		
 	
+	
 	//Below is boilerplate code--- We'll talk about it more later but for now, 
-	//just know that it's methods from the Object class that give our Objects some functionality
+	//just know that these are overridden methods from the Object class that give our Objects some functionality
+	//it looks scary but we can autogenerate it all, which we'll see later.
+	
 	
 	//these are constructors - they let you instantiate an object
 	
@@ -25,14 +29,12 @@ public class Pokemon {
 	}
 
 	//the toString() method lets you do String-like stuff with your objects, like print them out
-	
 	@Override
 	public String toString() {
 		return "Pokemon [name=" + name + ", type=" + type + "]";
 	}
 
-	//remember what hashcodes are?? They assign a unique identifier to each object you create
-	
+	//remember what hashcodes are?? They basically assign a unique identifier to each object you create
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,9 +46,7 @@ public class Pokemon {
 
 
 	//equals lets you compare objects to one another via their hashcode
-	//Java is like - are these objects the same object? Compare their hashcodes
-	
-
+	//Java is like - "are these objects the same object? Compare their hashcodes to check"
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
