@@ -5,6 +5,12 @@ import java.lang.Math; //we don't need to do this - the .lang package is importe
 
 public class Launcher {
 	
+	String str = "String literal - much easier than using new keyword!";
+	String string = new String("Making a String using the new keyword... Why did you do this to yourself?");
+	//We didn't find any significant benefits to using new for Strings
+	//Just know that using "new" puts the String object into the regular heap instead of the String pool
+	
+	
 	public static void main(String[] args) {
 		
 		double randomNumber = Math.round(Math.random() * 100); //generate a random double between 1-100.
