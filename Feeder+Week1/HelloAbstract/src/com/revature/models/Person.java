@@ -4,7 +4,7 @@ package com.revature.models;
 //It also implements our two interfaces (Hence inheriting their functionality).
 public abstract class Person implements Walkable, Sprintable {
 
-	public String name;
+	protected String name;
 	public int age;
 	
 	
@@ -43,6 +43,7 @@ public abstract class Person implements Walkable, Sprintable {
 	
 	//alt + shift + s to bring up auto generation options - in this case we built our constructors with it
 	
+
 	//no args constructor (constructor from super class)
 	public Person() {
 		super();
@@ -54,7 +55,11 @@ public abstract class Person implements Walkable, Sprintable {
 		super();
 		this.name = name;
 		this.age = age;
-	} 
+	}
+
+
+	
+	
 	
 	
 	

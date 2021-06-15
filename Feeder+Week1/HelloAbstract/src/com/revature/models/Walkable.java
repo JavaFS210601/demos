@@ -6,7 +6,7 @@ public interface Walkable {
 	String unitOfMeasurement = "miles";
 	
 	//abstract method - no method body! AKA not implemented
-	void move(int distance);
+	public void move(int distance);
 	
 	//default concrete method (which we won't usually use on Interfaces, might as well use an Abstract class)
 	default void trip() {

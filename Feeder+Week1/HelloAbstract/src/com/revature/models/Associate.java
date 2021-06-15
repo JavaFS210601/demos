@@ -12,17 +12,24 @@ public class Associate extends Person {
 		System.out.println(name + " moved " + distance + " " + unitOfMeasurement);
 	}
 	
+
 	@Override
 	public void jump(int inches) {
 		System.out.println(name + " jumped " + inches + " inches!");
 	}	
 	
 	
-	
 	public Associate(String batchId, String name, int age) {
 		super(name, age); //this will call the all args constructor of the Person abstract class
 		this.batchId = batchId;
 	}
+
+
+
+
+
+
+
 
 	
 	

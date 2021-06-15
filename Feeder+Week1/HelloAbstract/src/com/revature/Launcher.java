@@ -11,7 +11,8 @@ public class Launcher {
 		
 		//Instantiate a Associate object
 		//This is an example of UPCASTING! Which is considered good practice
-		//If the variable wasn't of type Person, we wouldn't have access to the name and age fields found in Person
+		//This gives us access to the members of the Person class,
+		//But it hides members of the Associate class (only Overridden methods are visible)
 		Person ryan = new Associate("111111", "Ryan", 22);
 
 		ryan.juggle();
@@ -19,6 +20,8 @@ public class Launcher {
 		ryan.jump(700);
 		
 		ryan.move(500);
+		
+		//ryan.batchId; Java doesn't recognize the field of the Associate class because we upcasted 
 		
 		//Notice how this trip functionality is the trip functionality found ALL the way in the Sprintable Interface
 		//The associate class never mentions it, but it extends Person, which implements Sprintable
