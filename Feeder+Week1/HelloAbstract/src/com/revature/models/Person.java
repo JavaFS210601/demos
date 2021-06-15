@@ -1,12 +1,11 @@
 package com.revature.models;
 
-//This is an abstract class (notice the abstract keyword). 
+//This is an abstract class (notice the abstract keyword).
 //It also implements our two interfaces (Hence inheriting their functionality).
 public abstract class Person implements Walkable, Sprintable {
 
 	protected String name;
 	public int age;
-	
 	
 	//concrete method
 	public void juggle() {
