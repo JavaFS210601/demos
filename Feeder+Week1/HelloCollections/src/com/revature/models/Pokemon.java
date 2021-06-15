@@ -7,7 +7,6 @@ public class Pokemon {
 	String type;
 		
 	
-	
 	//Below is boilerplate code--- We'll talk about it more later but for now, 
 	//just know that these are overridden methods from the Object class that give our Objects some functionality
 	//it looks scary but we can autogenerate it all, which we'll see later.
@@ -68,6 +67,8 @@ public class Pokemon {
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 	
