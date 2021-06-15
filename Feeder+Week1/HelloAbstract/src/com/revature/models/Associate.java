@@ -7,7 +7,7 @@ public class Associate extends Person {
 	public String batchId;
 	
 	
-	@Override
+	@Override //The @Override annotation implies to the JVM that you're changing the functionality of a method
 	public void move(int distance) {
 		System.out.println(name + " moved " + distance + " " + unitOfMeasurement);
 	}

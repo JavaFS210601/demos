@@ -32,6 +32,8 @@ public abstract class Person implements Walkable, Sprintable {
 		Sprintable.super.trip();
 	}
 	
+
+	
 	
 	
 	
