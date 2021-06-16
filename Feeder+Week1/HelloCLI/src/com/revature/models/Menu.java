@@ -37,7 +37,8 @@ public class Menu {
 			System.out.println("hi -> get greeted");
 			System.out.println("getAllLegos -> show every LegoSet in the database");
 			System.out.println("LegoSetById -> get a LegoSet by its Id");
-			
+			System.out.println("addLegoSet -> add a new LegoSet");
+			System.out.println("exit -> exit the application");
 			
 			//parse the user input after they ponder the menu options
 			//.toLowerCase so the user doesn't have to worry about case-sensitivity
@@ -72,9 +73,31 @@ public class Menu {
 				break;
 			}
 			
+			case "addlegoset": {
+				
+				//get the user's input for the LegoSet pieces field
+				System.out.println("How many pieces are in your LegoSet?");
+				int pieceInput = scan.nextInt();
+				scan.nextLine();
+				
+				//get the user's input for the LegoSet franchise field
+				System.out.println("What franchise is your LegoSet from?");
+				String franchiseInput = scan.nextLine();
+				
+				//call the addLegoSet method of LegoCollection
+				//it takes a LegoSet object, so we construct one directly in there, using the user's inputs
+				lc.addLegoSet(new LegoSet(pieceInput, franchiseInput));
+				
+				//Let the user know that their LegoSet was added, using the input they gave
+				System.out.println(franchiseInput + " LegoSet with " + pieceInput + " pieces added!");
+				
+				break;
+			}
 			
-			
-			
+			case "exit" : {
+				System.out.println("bye");
+				displayMenu = false;
+			}
 			
 			}
 			

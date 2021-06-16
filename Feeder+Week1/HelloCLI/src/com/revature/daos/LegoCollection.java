@@ -36,11 +36,26 @@ public class LegoCollection implements LegoCollectionInterface {
 	}
 
 
+	//This method takes a LegoSet object as a parameter (The menu will ask for inputs to construct a LegoSet object)
 	@Override
 	public void addLegoSet(LegoSet legoSet) {
 		
+		//if we want to add a new LegoSet to the Array, we'll need a bigger Array (since they're fixed in size)
+		LegoSet[] newArray = new LegoSet[legoSets.length + 1];
 		
+		//populate the new array with the contents of the old one (note this will leave one null spot)
+		for(int i = 0; i<legoSets.length; i++) {
+			newArray[i] = legoSets[i];
+		}
 		
+		//we're setting the ID of the new LegoSet to the size of the Array. effectively incrementing the Ids by 1
+		legoSet.legoSetId = newArray.length; //normally, we'd use private variables and a setter method
+		
+		//"Set the last (null) index of the newArray to the new user-inputted LegoSet.
+		newArray[legoSets.length] = legoSet;
+		
+		//assign the new Array to the main Array we're using
+		legoSets = newArray;
 	}
 
 

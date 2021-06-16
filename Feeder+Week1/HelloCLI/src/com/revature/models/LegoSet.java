@@ -4,7 +4,8 @@ package com.revature.models;
 //Remember - in your Project 0, the LegoCollection Class will be the database, and LegoSets will be pieces of data
 public class LegoSet {
 	
-	int legoSetId; //we'll use this to uniquely identify each LegoSet object
+	public int legoSetId; //we'll use this to uniquely identify each LegoSet object
+						  //setting this to be public so that we can set the id in the addLegoSet method
 	int pieces;
 	String franchise;
 		

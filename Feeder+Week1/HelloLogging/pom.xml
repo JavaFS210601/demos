@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>HelloLogging</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>HelloLogging</name>
+  <description>using a maven project to demonstrate Logging with Log4J</description>
+  
+  <!-- This is the pom.xml file, where we can set things like Java version and include dependencies -->
+  
+  <!-- In this properties tag, I'm just setting our Java version to Java 1.8 -->
+  <properties>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+  		<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <!-- This is where we'll put our dependencies -->
+  <dependencies>
+  		<!-- We want to use Log4J for Logging. We need a Log4J dependency -->
+ 		<!-- I simply googled Log4J dependency and grabbed the one for Maven -->
+	 <dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.14.1</version>
+	  </dependency>
+	  
+  </dependencies>
+  
+  
+</project>
