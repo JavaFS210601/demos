@@ -5,4 +5,27 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>HelloTesting</name>
   <description>Using Testing with JUnit</description>
+  
+  
+   <!-- In this properties tag, I'm just setting our Java version to Java 1.8 -->
+  <properties>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+  		<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <!-- This dependenCIES tag has to house all your dependenCY tags or your pom.xml will have problems with you. -->
+  <dependencies>
+  
+  	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>5.8.0-M1</version>
+	    <scope>test</scope>
+	</dependency>
+  
+  </dependencies>
+  
+  
+  
 </project>
