@@ -81,7 +81,7 @@ public class MathOpsTests {
 		assertNotEquals(0, result); 
 	}
 	
-	
+
 	@Test
 	public void testDivideByZero() {
 		System.out.println("Going to try dividing by zero :(");
