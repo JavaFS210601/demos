@@ -18,7 +18,4 @@ public class ComparePokeName implements Comparator<Pokemon> {
 
 	
 	
-
-	
-	
 }
