@@ -2,10 +2,9 @@ package com.revature;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.Set;
 
 import com.revature.models.Pokemon;
 
@@ -78,9 +77,47 @@ public class Launcher {
 		
 		System.out.println("=================================(Sets)");
 		
-		//nothing's here yet :(
+		//HashSet is a general-use implementation of Set Interface
+		Set<Pokemon> myPokemonSet = new HashSet<>();
 		
-		System.out.println("===============================(Maps)");
+		//Let's show example of how Sets differ from Lists
+		
+		
+		//.add() method can add elements to your Collections
+		myPokemonSet.add(new Pokemon("Pikachu", "Electric"));
+		myPokemonSet.add(new Pokemon("Torkoal", "Fire"));
+		myPokemonSet.add(new Pokemon("Treeko", "Grass"));
+		myPokemonSet.add(new Pokemon("Mudkip", "Water/Ground")); 
+		myPokemonSet.add(new Pokemon("Mudkip", "Water/Ground")); //Sets CANNOT have duplicates!! This won't register
+		myPokemonSet.add(new Pokemon("Gengar", "Ghost/Poison"));
+		
+		
+		//notice how Sets are not ordered! The Pokemon objects don't print in any particular order!
+		//also notice how the duplicate record isn't printed!! (Despite Java letting you try...)
+		for(Pokemon p : myPokemonSet) {
+			System.out.println(p);
+		}
+		
+		
+		//remember, Sets have no order... so they have no index.
+		//So what happens if we try to use .get() (which needs an index to get a certain Object)
+		
+		//myPokemonSet.get(4); nothing happens. Sets don't have .get() functionality
+		
+		
+		//One way to see if specific objects exists in the Set .contains(). 
+		//This would require us to instantiate an object on its own, then add it into the Set
+		Pokemon bulbasaur = new Pokemon("Bulbasaur", "Grass/Poison");
+		
+		myPokemonSet.add(bulbasaur); //adding the bulbasaur variable that points to the Pokemon object we instantiated
+		
+		System.out.println(myPokemonSet.contains(bulbasaur)); //true! bulbasaur object exists
+		
+		myPokemonSet.remove(bulbasaur); //remove our bulbasaur objects
+		
+		System.out.println(myPokemonSet.contains(bulbasaur)); //now this is false, since bulbasaur isn't in the set
+		
+		System.out.println("====================================(Maps)");
 
 //		//instantiate a super simple map before we work with Pokemon objects
 //		Map<Integer, String> simpleMap = new TreeMap<>();

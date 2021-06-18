@@ -5,7 +5,7 @@ public class Pokemon {
 	//these are the fields of the Pokemon class
 	private String name;
 	private String type;
-
+	
 		
 	public void fight() {
 		System.out.println(this.name + " attacked!");
@@ -15,7 +15,7 @@ public class Pokemon {
 	//These are overridden methods from the Object class (the root class of all classes). 
 	//they give our Objects certain functionality! Which we'll talk about below
 	
-	//it looks scary but we can autogenerate it all with alt + shift + s (or the source tab).
+	//*********it looks scary but we can autogenerate it all with alt + shift + s (or the source tab).
 	
 	
 	//Remember, constructors let you instantiate an object (initialize an object with their variables)
@@ -42,6 +42,8 @@ public class Pokemon {
 
 
 	//remember what hashcodes are?? They basically assign a unique identifier to each object you create
+	//Java needs this to determine whether Objects are the same or not
+	//For instance, Sets won't recognize duplicates if objects don't have hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
