@@ -2,9 +2,13 @@ package com.revature;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import com.revature.models.Pokemon;
 
@@ -86,7 +90,7 @@ public class Launcher {
 		//.add() method can add elements to your Collections
 		myPokemonSet.add(new Pokemon("Pikachu", "Electric"));
 		myPokemonSet.add(new Pokemon("Torkoal", "Fire"));
-		myPokemonSet.add(new Pokemon("Treeko", "Grass"));
+		myPokemonSet.add(new Pokemon("Treeko", "Grass")); 
 		myPokemonSet.add(new Pokemon("Mudkip", "Water/Ground")); 
 		myPokemonSet.add(new Pokemon("Mudkip", "Water/Ground")); //Sets CANNOT have duplicates!! This won't register
 		myPokemonSet.add(new Pokemon("Gengar", "Ghost/Poison"));
@@ -117,55 +121,81 @@ public class Launcher {
 		
 		System.out.println(myPokemonSet.contains(bulbasaur)); //now this is false, since bulbasaur isn't in the set
 		
-		System.out.println("====================================(Maps)");
+		
+		System.out.println("==============================================(Queues) (LinkedList)");
+		
+		
+		
+		
+		
+		
+		System.out.println("=========================================(Maps)");
 
-//		//instantiate a super simple map before we work with Pokemon objects
-//		Map<Integer, String> simpleMap = new TreeMap<>();
-//		//We create a TreeMap object with an Integer Key, and a String Value. call it simpleMap
-//		
-//		//insert values into simpleMap
-//		simpleMap.put(1, "One");
-//		simpleMap.put(2, "Two");
-//		simpleMap.put(3, "Four");
-//		
-//		System.out.println(simpleMap); //print out our map
-//		//notice that TreeMaps are ordered! The elements print in order based on their keys
-//		
-//		
-//		
-//		//using a HashMap with String keys for our Pokemon objects---------------
-//		
-//		//Instantiating some Pokemon Objects to put into our HashMap, using the all-args constructor.
-//		Pokemon pikachu = new Pokemon("Pikachu", "Electric");
-//		Pokemon squirtle = new Pokemon("Squirtle", "Water");
-//		Pokemon mewtwo = new Pokemon("Mewtwo", "Psychic");
-//		
-//		//Let's make a HashMap that takes a String as the Key, and a Pokemon as the value
-//		//We'll make it a map of trainers and their pokemon
-//		Map<String, Pokemon> trainers = new HashMap<>();
-//		
-//		//throw some values into our trainers HashMap
-//		trainers.put("Joey", mewtwo);
-//		trainers.put("Ben", pikachu);
-//		trainers.put("Greg", mewtwo); //Maps can take duplicate Values
-//		trainers.put("Greg", squirtle); //Maps don't take duplicate Keys! This won't get registered
-//									  //Won't throw an error though.
-//		
-//		System.out.println(trainers); //print the contents of our HashMap
-//
-//		//use .get() to grab map element values using the keys
-//		System.out.println(trainers.get("Joey"));
-//		System.out.println(trainers.get("Ben"));
-//		//I put them in print statements, cause it wouldn't get printed to the console otherwise.
-//		//It simply "gets" the value, you have to print it out yourself
-//		
-//		//you can also instantiate the Pokemon object when putting an element into the map
-//		trainers.put("Nancy", new Pokemon("Ditto", "Normal"));
-//		
-//		System.out.println(trainers); //HashMaps aren't ordered! these don't print in a certain order like TreeMaps
-//		
-//		
-//		//more Maps stuff TBD
+		//instantiate a super simple map before we work with Pokemon objects
+		Map<Integer, String> simpleMap = new TreeMap<>();
+		//We create a TreeMap object with an Integer Key, and a String Value. call it simpleMap
+		
+		//insert values into simpleMap
+		simpleMap.put(1, "One");
+		simpleMap.put(2, "Two");
+		simpleMap.put(3, "Four");
+		
+		System.out.println(simpleMap); //print out our map
+		//notice that TreeMaps are ordered! The elements print in order based on their keys
+		
+		
+		
+		//using a HashMap with String keys for our Pokemon objects---------------
+		
+		//Instantiating some Pokemon Objects to put into our HashMap, using the all-args constructor.
+		Pokemon pikachu = new Pokemon("Pikachu", "Electric");
+		Pokemon squirtle = new Pokemon("Squirtle", "Water");
+		Pokemon mewtwo = new Pokemon("Mewtwo", "Psychic");
+		
+		//Let's make a HashMap that takes a String as the Key, and a Pokemon as the value
+		//We'll make it a map of trainers and their pokemon
+		Map<String, Pokemon> trainers = new HashMap<>();
+		
+		//throw some values into our trainers HashMap - using the variables of our Pokemon objects
+		trainers.put("Joey", mewtwo);
+		trainers.put("Ben", pikachu);
+		trainers.put("Greg", mewtwo); //Maps can take duplicate Values
+		trainers.put("Greg", squirtle); //Maps don't take duplicate Keys! This won't get registered
+									  //Won't throw an error though.
+
+		//use .get() to grab map element values using the keys
+		System.out.println(trainers.get("Joey"));
+		System.out.println(trainers.get("Ben"));
+		//I put them in print statements, cause it wouldn't get printed to the console otherwise.
+		//It simply "gets" the value, you have to print it out yourself
+		
+		
+		System.out.println(trainers); //HashMaps aren't ordered! these don't print in a certain order like TreeMaps
+
+		
+		System.out.println("========================================(Comparator Interface)");
+		
+		//Let's sort our Pokemon ArrayList alphabetically 
+		
+		//The Collections Class (not Collection Interface) has methods that all Collections can use
+		//.sort() will take in a Collection and a Comparator in order to sort the Collection
+		Collections.sort(myPokemonList, new ComparePokeName());
+		//Now our ArrayList has been sorted according to the compare() method in ComparePokeName
+		
+		for(Pokemon p : myPokemonList) {
+			System.out.println(p);
+		}
+	
+		
+	
+		//Another cool Collections method is .reverse(), which reverses the elements
+		Collections.reverse(myPokemonList);
+		
+		System.out.println("---------------We've reversed the order using .reverse()---------------");
+		
+		for(Pokemon p : myPokemonList) {
+			System.out.println(p);
+		}
 		
 		
 	}
