@@ -16,6 +16,10 @@ import org.junit.jupiter.api.Test;
 //keyboard shortcut to run JUnit tests:
 //alt + shift + x , T
 
+//YOU HAVE TO RUN THE CLASS WITH THE ACTUAL TEST METHODS 
+//(so right click MathOpsTests.java -> run as -> JUnit test)
+//This is what I was struggling with in class for so long :p
+
 public class MathOpsTests {
 
 	

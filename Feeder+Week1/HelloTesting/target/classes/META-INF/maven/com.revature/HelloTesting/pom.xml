@@ -16,13 +16,14 @@
   <!-- This dependenCIES tag has to house all your dependenCY tags or your pom.xml will have problems with you. -->
   <dependencies>
   
-  	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+ 	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 	<dependency>
-	    <groupId>org.junit.jupiter</groupId>
-	    <artifactId>junit-jupiter-api</artifactId>
-	    <version>5.8.0-M1</version>
-	    <scope>test</scope>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-api</artifactId>
+		<version>5.7.1</version>
+		<scope>test</scope>
 	</dependency>
+
   
   </dependencies>
   
