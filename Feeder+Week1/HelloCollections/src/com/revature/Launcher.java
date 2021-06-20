@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -124,11 +125,29 @@ public class Launcher {
 		
 		System.out.println("==============================================(Queues) (LinkedList)");
 		
+		//We won't upcast here, since we want access to the overridden methods in LinkedList(peek, poll)
+		LinkedList<Pokemon> PokemonLL = new LinkedList<Pokemon>();
 		
+	     //Adding elements to the linked list, note some of the different methods we can use to add
+		PokemonLL.add(new Pokemon("Sudowoodo", "Rock"));
+		PokemonLL.add(new Pokemon("Sobble", "Water"));
+		PokemonLL.add(new Pokemon("Murkrow", "Dark/Flying"));
+		PokemonLL.add(2, new Pokemon("Arcanine", "Fire")); //add to a specific index
 		
+		//iterate through the LinkedList - Queues are ordered, very strict structure based on index!
+		for(Pokemon p : PokemonLL) {
+			System.out.println(p.getName() + " is in the LinkedList!");
+		}
 		
+		//show the name of the first Pokemon of the LinkedList
+		System.out.println(PokemonLL.peek().getName() + " is the first element"); 
 		
+		//show the name and remove the first Pokemon of the LinkedList
+		System.out.println(PokemonLL.poll().getName() + " has left..."); 
 		
+		//original first Pokemon is gone!
+		System.out.println(PokemonLL.peek().getName() + " is the new first element"); 
+ 		
 		System.out.println("=========================================(Maps)");
 
 		//instantiate a super simple map before we work with Pokemon objects
