@@ -31,6 +31,7 @@ CREATE TABLE dogs(
 
 ------------------------------------------------------------------------------------------------------
 
+
 --let's use some Data Manipulation Language (DML): Select, Insert, Update, Delete
 
 --INSERT some owners into the owner table, and dogs into the dogs table
@@ -56,5 +57,66 @@ SELECT * FROM dogs; --returns all the records in the dogs table
 SELECT dog_name FROM dogs; --return all the dog names
 
 SELECT dog_name, dog_age, owner_id_fk FROM dogs; --this would return the values from these three columns
+
+
+--Let's explore using the WHERE clause, which lets us filter the data we select
+--There are lots of operators we can use, all of which filter data differently----------------------------------------(WHERE) 
+
+--select dogs who are terriers (=)
+SELECT * FROM dogs WHERE dog_breed = 'Terrier';
+
+--select dogs who are NOT terriers (!=)
+SELECT * FROM dogs WHERE dog_breed != 'Terrier';
+
+--select dogs younger than 8 (<)
+SELECT * FROM dogs WHERE dog_age < 8;
+
+
+--dogs names starting with "S" (like with %)
+SELECT * FROM dogs WHERE dog_name LIKE 'S%';
+
+--dogs names ending with "y" (like with %)
+SELECT * FROM dogs WHERE dog_name LIKE '%y';
+
+
+--dogs who weigh between 10-30 (between with and)
+SELECT * FROM dogs WHERE dog_weight BETWEEN 10 AND 30;
+
+
+--dogs who are Corgis or Mutts (or)
+SELECT * FROM dogs WHERE dog_breed = 'Corgi' OR dog_breed = 'Mutt';
+--you can do this same thing with less typing if you use (in)
+SELECT * FROM dogs WHERE dog_breed IN ('Corgi', 'Mutt');
+
+--dogs who are not Corgis or Mutts (not in)
+SELECT * FROM dogs WHERE dog_breed NOT IN ('Corgi', 'Mutt');
+
+
+--Also important is the ORDER BY clause---------------------------------------------------------(ORDER BY)
+--ORDER BY lets us order our selected data
+
+SELECT * FROM dogs ORDER BY dog_age; --ascending by default, but can specify asc if you want 
+--SELECT * FROM dogs ORDER BY dog_age ASC;
+
+
+SELECT * FROM dogs ORDER BY dog_weight DESC; 
+
+
+--We can also UPDATE values in our tables---------------------------------------------------------(UPDATE)
+
+--update Quincy's age to be 8. 
+UPDATE dogs SET dog_age = 8 WHERE dog_name = 'Quincy'; --happy birthday!
+
+--another way to perform the same age update functionality
+UPDATE dogs SET dog_age = dog_age + 1 WHERE dog_name = 'Sparky'; --happy birthday!
+
+--Be careful!! You should ALWAYS use a where clause, or every row will change.
+
+
+--Finally, can also DELETE records. I usually don't do this, it can be dangerous for data integrity.-------------------(DELETE)
+--Like with update, remember to alwasy use the where clause, or everything will go.
+
+DELETE FROM dogs WHERE dog_name = 'Sparky'; --this would delete sparky :(
+
 
 
