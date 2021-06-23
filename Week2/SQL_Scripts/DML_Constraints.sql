@@ -3,7 +3,7 @@
 --owner table
 CREATE TABLE owners(
 	owner_id serial PRIMARY KEY, --serial is an auto-incrementing int type. Convenient! We don't include it in insert statments
-								 --great for Primary Keys, so that we can have a unique id for each record
+						 --great for Primary Keys, so that we can have a unique id for each record
 	owner_name TEXT NOT NULL --every owner will be forced to have a name
 );
 
@@ -117,6 +117,9 @@ UPDATE dogs SET dog_age = dog_age + 1 WHERE dog_name = 'Sparky'; --happy birthda
 --Like with update, remember to alwasy use the where clause, or everything will go.
 
 DELETE FROM dogs WHERE dog_name = 'Sparky'; --this would delete sparky :(
+
+
+
 
 
 
