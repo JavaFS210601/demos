@@ -12,6 +12,7 @@ CREATE TABLE bottles (
 	baby_id_fk int REFERENCES babies (baby_id) ON DELETE CASCADE --SORRY FORGOT WE DIDN'T SEE THIS YET :(
 );
 
+
 INSERT INTO babies (baby_name, baby_age, bib_color) 
 			VALUES ('Charleston', 2, 'Magenta'),
 				   ('Chadwick', 1.12, 'Burlywood'),
