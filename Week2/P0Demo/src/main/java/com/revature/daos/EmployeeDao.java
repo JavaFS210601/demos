@@ -84,7 +84,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			//the values will come from the Employee object we sent in
 			//this requires two arguments, the number of the "?", and the value to give it
 			ps.setString(1, emp.getF_name());
-			ps.setString(2, emp.getL_name() );
+			ps.setString(2, emp.getL_name());
 			ps.setDate(3, java.sql.Date.valueOf(currentDate)); //this takes our Java Date, and turns it into a SQL Date.
 			ps.setInt(4, emp.getRole_id());
 			
@@ -101,6 +101,55 @@ public class EmployeeDao implements EmployeeDaoInterface {
 		
 	}
 
+	@Override
+	public void changeRole(int empId, int roleId) {
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			
+			//notice how there are no ResultSet object in methods that don't include select statements...
+			//because we aren't returning anything! Only changing stuff in the DB, not getting data from it.
+			
+			String sql = "UPDATE employees SET role_id = ? WHERE employee_id = ?;";
+			
+			PreparedStatement ps = conn.prepareStatement(sql); //make a PreparedStatement using the SQL String we made 
+			
+			//adding values to the wildcard parameters based on the user's input
+			ps.setInt(1, roleId);
+			ps.setInt(2, empId);
+			
+			ps.executeUpdate(); //Run the PreparedStatement now that we've given values to its parameters
+			
+			System.out.println("Employee role_id changed to: " + roleId);
+			
+		} catch (SQLException e) {
+			System.out.println("Change role failed!");
+			e.printStackTrace();
+		}
+		
+	}
 
+	@Override
+	public void removeEmployee(int empId) {
+		
+		try(Connection conn = ConnectionUtil.getConnection()){
+			
+			String sql = "DELETE FROM employees WHERE employee_id = ?;";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, empId);
+			
+			ps.executeUpdate();
+			
+			System.out.println("GEt out of here employee #" + empId);
+			
+		} catch (SQLException e) {
+			System.out.println("Delete employee failed!");
+			e.printStackTrace();
+		}
+		
+	}
 
+	
+	
 }

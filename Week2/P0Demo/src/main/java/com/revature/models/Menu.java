@@ -34,8 +34,8 @@ public class Menu {
 			//menu options
 			System.out.println("employees -> show all employees");
 			System.out.println("add -> add a new employee ");
-			System.out.println("TBD -> ");
-			System.out.println("TBD -> ");
+			System.out.println("changerole -> change an employee's role");
+			System.out.println("fire -> fire an employee");
 			System.out.println("exit -> exit the application");
 			
 			
@@ -52,7 +52,7 @@ public class Menu {
 				//List of Employees that gets populated by the getEmployees method in our EmployeeDao
 				List<Employee> employees = ed.getEmployees(); 
 				
-				//Print out each Employee from the List one by one for the user see
+				//Print out each Employee from the List one by one for the user to see
 				for(Employee e : employees) {
 					System.out.println(e);
 				}
@@ -80,6 +80,57 @@ public class Menu {
 				
 				//Put the new Employee into the addEmployee() method in the EmployeeDao
 				ed.addEmployee(newEmployee);
+				
+				break;
+			}
+			
+			case "changerole" : {
+				
+				System.out.println("These are the employees on the roster: ");
+				
+				//this is using the already existing getEmployees() method
+				List<Employee> employees = ed.getEmployees(); 
+				
+				//Print out each Employee from the List one by one for the user to see
+				for(Employee e : employees) {
+					System.out.println(e);
+				}
+				
+				System.out.println("----------------------------------------------------");
+				
+				System.out.println("Enter the ID of the employee who's role is changing:");
+				int idInput = scan.nextInt(); //the user enters the ID of the employee to change the role of
+				scan.nextLine();
+				
+				System.out.println("Enter the new Role ID: 1)Manager 2)Fry Cook 3)Cashier 4)Marketing 5)Nepotism");
+				int roleInput = scan.nextInt();
+				scan.nextLine();
+				
+				ed.changeRole(idInput, roleInput); //we're going to supply the user inputs as arguments to this DAO method
+				
+				break;
+			}
+			
+			case "fire": {
+				
+				System.out.println("These are the employees on the roster... who will you fire?");
+				
+				//this is using the already existing getEmployees() method
+				List<Employee> employees = ed.getEmployees(); 
+				
+				//Print out each Employee from the List one by one for the user to see
+				for(Employee e : employees) {
+					System.out.println(e);
+				}
+				
+				System.out.println("------------------------------");
+				
+				System.out.println("Enter the employee id of the employee to fire:");
+				
+				int idInput = scan.nextInt();
+				scan.nextLine();
+				
+				ed.removeEmployee(idInput);
 				
 				break;
 			}
