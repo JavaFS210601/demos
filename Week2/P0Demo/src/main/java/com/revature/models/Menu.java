@@ -33,7 +33,7 @@ public class Menu {
 			
 			//menu options
 			System.out.println("employees -> show all employees");
-			System.out.println("TBD -> ");
+			System.out.println("add -> add a new employee ");
 			System.out.println("TBD -> ");
 			System.out.println("TBD -> ");
 			System.out.println("exit -> exit the application");
@@ -52,9 +52,34 @@ public class Menu {
 				//List of Employees that gets populated by the getEmployees method in our EmployeeDao
 				List<Employee> employees = ed.getEmployees(); 
 				
+				//Print out each Employee from the List one by one for the user see
 				for(Employee e : employees) {
 					System.out.println(e);
 				}
+				
+				break;
+			}
+			
+			case "add": {
+				
+				//we need to prompt the user for the employee's name, and their role id
+				//we'll have to come up with some functionality to get the current date for the hire_date field
+				System.out.println("Enter Employee First Name:");
+				String f_name = scan.nextLine();
+				
+				System.out.println("Enter Employee Last Name:");
+				String l_name = scan.nextLine();
+				
+				System.out.println("Enter Role Id: 1)Manager 2)Fry Cook 3)Cashier 4)Marketing 5)Nepotism");
+				int roleId = scan.nextInt();
+				scan.nextLine(); //because without any nextLine, your enter keystroke will be grabbed as the next input
+				
+				//Given all this information, we'll create a new Employee object to send to a DAO method
+				//This is using the all-args minus employee_id constructor
+				Employee newEmployee = new Employee(f_name, l_name, "xxx", roleId); //placeholder for hire_date, will be changed
+				
+				//Put the new Employee into the addEmployee() method in the EmployeeDao
+				ed.addEmployee(newEmployee);
 				
 				break;
 			}

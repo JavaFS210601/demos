@@ -10,6 +10,6 @@ public interface EmployeeDaoInterface {
 
 	public List<Employee> getEmployees(); //return a List of all employees
 	
-	
+	public void addEmployee(Employee emp);
 	
 }
