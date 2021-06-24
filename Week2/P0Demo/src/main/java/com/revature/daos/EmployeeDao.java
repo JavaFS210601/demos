@@ -18,17 +18,21 @@ public class EmployeeDao implements EmployeeDaoInterface {
 
 	
 	@Override
-	public List<Employee> getEmployees() {
+	public List<Employee> getEmployees() { //this is SELECT functionality
 		
 		try(Connection conn = ConnectionUtil.getConnection()){ //try to establish a DB connection, so we can run a query
 			
-			ResultSet rs = null; //initialize an empty ResultSet that will store the results of our query 
+			//initialize an empty ResultSet that will store the results of our query 
+			ResultSet rs = null; //we need this for select statements, so that the returned data can get stored
 			
-			String sql = "SELECT * FROM employees;"; //write the query, assign it to a String variable
+			//write the query, assign it to a String variable
+			String sql = "SELECT * FROM employees;"; 
 			
-			Statement s = conn.createStatement(); //creating an object to send the query to our DB
+			//creating an object to send the query to our DB using our Connection object's createStatement() method
+			Statement s = conn.createStatement(); 
 			
-			rs = s.executeQuery(sql); //execute the query (sql) using our Statement object (s), put it in our ResultSet (rs) 
+			//execute the query (sql) using our Statement object (s), put it in our ResultSet (rs) 
+			rs = s.executeQuery(sql); //again, the ResultSet just holds all the data we get back from the select statement
 			
 			
 			List<Employee> employeeList = new ArrayList<>(); //create a List that will be populated with the returned employees
@@ -37,6 +41,8 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			while(rs.next()) { //while there are results left in the ResultSet (rs)
 				
 				//Create a new Employee Object from each returned record
+				//This is the Employee Class's all args constructor
+				//And we're filling it with each column of the Employee record
 				Employee employee = new Employee(
 						rs.getInt("employee_id"),
 						rs.getString("f_name"),
@@ -62,7 +68,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 	}
 
 	@Override
-	public void addEmployee(Employee emp) {
+	public void addEmployee(Employee emp) { //This is INSERT functionality (with complicated date functionality if you dare...)
 		
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			
@@ -74,13 +80,13 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			String currentDate = dateFormat.format(date); //make a String that represents today's date in the format we want (line 69)
 			
 			//we're going to create a SQL statement using parameters to insert a new Employee
-			String sql = "INSERT INTO employees (f_name, l_name, hire_date, role_id)"
+			String sql = "INSERT INTO employees (f_name, l_name, hire_date, role_id) " //creating a line break for readability
 					+ "VALUES (?, ?, ?, ?);"; //these are parameters!!! We have to now specify the value of each "?"
 			
 			
 			PreparedStatement ps = conn.prepareStatement(sql); //we use PreparedStatements for SQL commands with parameters
 			
-			//use the PreparedStatement object to insert values into the SQL query
+			//use the PreparedStatement object's methods to insert values into the SQL query's ?s
 			//the values will come from the Employee object we sent in
 			//this requires two arguments, the number of the "?", and the value to give it
 			ps.setString(1, emp.getF_name());
@@ -88,7 +94,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			ps.setDate(3, java.sql.Date.valueOf(currentDate)); //this takes our Java Date, and turns it into a SQL Date.
 			ps.setInt(4, emp.getRole_id());
 			
-			//this method actually executes the SQL command that we built
+			//this method actually sends and executes the SQL command that we built
 			ps.executeUpdate(); //we use executeUpdate for inserts, updates, and deletes. 
 			
 			//send confirmation to the console if successful

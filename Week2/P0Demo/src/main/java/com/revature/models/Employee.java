@@ -9,7 +9,6 @@ public class Employee {
 	private int role_id;
 
 	
-	
 	//boilerplate code---------------------------------------------------------------- alt + shift + s (or click the source tab)
 	
 	//no args constructor

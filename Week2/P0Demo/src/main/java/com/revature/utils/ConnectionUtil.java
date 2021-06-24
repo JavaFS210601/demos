@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//This Class contains the logic that manages the connection to our database
-//It will have a method called getConnection() that will return Connection objects
+//This Class contains the logic that gets a connection to our database
+//It will have a method called getConnection() that will return a Connection object
 //We will need these Connection object in our DAO layer to interact with our database
 public class ConnectionUtil {
 	
+	//a method called getConnection that returns a Connection object
 	public static Connection getConnection() throws SQLException {
 		
 		//For compatibility with other technologies/frameworks, we'll need to register our Driver
@@ -17,17 +18,18 @@ public class ConnectionUtil {
 			Class.forName("org.postgresql.Driver"); //try to find and return the postgresql Driver Class
 		} catch (ClassNotFoundException e) {
 			System.out.println("Class wasn't found :(");
-			e.printStackTrace(); //prints the exception message to the console
+			e.printStackTrace(); //prints the exception message to the console if we can't find the postgresql class
 		}
 		
 		//We need to provide our database credentials
 		//We'll hardcode them for now, but we'll see how to hide this username/password in environment variables
 		String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=Krusty_Krab";
 		String username = "postgres";
-		String password = "Sparky2014!!"; //this will be whatever password you set in postgres
+		String password = "Sparky2014!!"; //this will be whatever password you set in postgres (or RDS if you're using that)
 									  //hopefully you just left it as password...
 		
 		
+		//This is what returns our actual Connection object (note how this getConnection() method has a return type of Connection
 		return DriverManager.getConnection(url, username, password);
 		
 	}

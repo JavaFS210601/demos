@@ -54,7 +54,7 @@ public class Menu {
 				
 				//Print out each Employee from the List one by one for the user to see
 				for(Employee e : employees) {
-					System.out.println(e);
+					System.out.println(e.getEmployee_id() + ") " + e.getF_name() + " " + e.getL_name() + ", Hired on " + e.getHire_date());
 				}
 				
 				break;
@@ -76,7 +76,7 @@ public class Menu {
 				
 				//Given all this information, we'll create a new Employee object to send to a DAO method
 				//This is using the all-args minus employee_id constructor
-				Employee newEmployee = new Employee(f_name, l_name, "xxx", roleId); //placeholder for hire_date, will be changed
+				Employee newEmployee = new Employee(f_name, l_name, "placeholder", roleId); //placeholder for hire_date, will be changed
 				
 				//Put the new Employee into the addEmployee() method in the EmployeeDao
 				ed.addEmployee(newEmployee);
@@ -130,7 +130,12 @@ public class Menu {
 				int idInput = scan.nextInt();
 				scan.nextLine();
 				
-				ed.removeEmployee(idInput);
+				//example of some foolproofing 
+				if(idInput == 1) {
+					System.out.println("can't fire managers!!!");
+				} else {
+					ed.removeEmployee(idInput);		
+				}
 				
 				break;
 			}
@@ -146,8 +151,7 @@ public class Menu {
 				break;
 			}
 			
-			
-			
+				
 			}
 			
 		}
