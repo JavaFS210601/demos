@@ -224,5 +224,3 @@ SELECT home_base_fk FROM avengers EXCEPT SELECT home_base FROM homes;
 SELECT home_base FROM homes EXCEPT SELECT home_base_fk FROM avengers;
 --The 'A Box' home_base is the only hame_base taht doesn't appear in the avengers table
 
-
-
