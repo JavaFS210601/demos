@@ -23,7 +23,7 @@ INSERT INTO roles (role_title, role_salary)
 					('Marketing Director', 100000),			   
 					('Nepotism', 100000);			  
 
-SELECT * FROM roles;  			  
+SELECT * FROM roles;
 
 INSERT INTO employees (f_name, l_name, hire_date, role_id)
 			VALUES ('Eugene', 'Krabs', '1998-01-01', 1),		   
@@ -108,5 +108,56 @@ EXECUTE create_employee('Pete', 'Fishman', '1998-01-15', 2);
 EXECUTE create_employee('New', 'Guy', '1998-01-25', 3); 
 
 SELECT * FROM employees; --pete lives!!!!!
+
+
+--TRIGGERS-------------------------------------------------------
+
+--I want to adjust the role_salaries column every time an employee is added or removed
+--Every time an employee leaves, the salaries go up, and every time an employee is hired, the salaries go down.
+
+
+--I want to create two functions to change the salaries, and use them with our triggers
+CREATE FUNCTION employee_removed() RETURNS TRIGGER AS '
+	begin
+		update roles set role_salary = role_salary + 10000;
+		return null;
+	end;
+' LANGUAGE plpgsql;
+
+
+CREATE FUNCTION employee_added() RETURNS TRIGGER AS '
+	begin
+		update roles set role_salary = role_salary - 10000;
+		return null;
+	end;
+' LANGUAGE plpgsql; --procedural SQL
+
+--Actually create the triggers
+
+--when an employee gets removed, trigger the employee_removed() function
+CREATE TRIGGER employee_removed AFTER DELETE ON employees 
+FOR EACH ROW EXECUTE PROCEDURE employee_removed();
+
+--when an employee gets added, trigger the employee_added() function
+CREATE TRIGGER employee_added AFTER INSERT ON employees
+FOR EACH ROW EXECUTE PROCEDURE employee_added();
+
+--DROP TRIGGER employee_added ON employees; (This is DROP syntax for triggers)
+
+--Let's actually trigger the triggers
+
+SELECT role_salary FROM roles; --show salaries before the triggers
+
+SELECT kill_pete(); --we've killed pete once again, using the user-defined function we made
+
+SELECT role_salary FROM roles; --trigger works! salaries have been increased after an employee is removed
+
+
+
+EXECUTE create_employee('Pete', 'Fishman', '1998-01-15', 2); --reanimate pete using our prepared statement
+
+SELECT role_salary FROM roles; --trigger works! salaries have been decreased after an employee is added
+
+
 
 
