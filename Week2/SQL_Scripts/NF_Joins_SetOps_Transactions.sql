@@ -127,14 +127,16 @@ CREATE TABLE avengers(
 
 
 INSERT INTO avengers (hero_name, hero_power, first_name, last_name, home_base_fk)
-			VALUES ('Spiderman', 'Webby Boi', 'Peter', 'Parker', 'Aunt May''s House'),
-			('Iron Man', 'Rich Big Brain Guy', 'Tony', 'Stark', 'Stark Tower');
+			VALUES 	('Iron Man', 'Rich Big Brain Guy', 'Tony', 'Stark', 'Stark Tower'),
+				('Spiderman', 'Webby Boi', 'Peter', 'Parker', 'Aunt May''s House');
+			
 
 --adding one more avenger so we can better understand how joins work
 INSERT INTO avengers (hero_name, hero_power, first_name, last_name)
 			VALUES ('Black Widow', 'she cute and she kill', 'Scarlett', 'Johanneson');
 
-SELECT hero_name FROM avengers; 
+
+SELECT * FROM avengers; 
 
 
 --Cool, fully normalized (or actually just up to 3NF).
@@ -223,4 +225,32 @@ SELECT home_base_fk FROM avengers EXCEPT SELECT home_base FROM homes;
 --every home base foudn in avengers exists in homes (besides null
 SELECT home_base FROM homes EXCEPT SELECT home_base_fk FROM avengers;
 --The 'A Box' home_base is the only hame_base taht doesn't appear in the avengers table
+
+
+-----------------------------------------------------------------------
+
+--I'm going to make a transaction, but I'm going to alter the avengers first to set it up
+
+--Alter to setup for the transaction 
+ALTER TABLE avengers ADD COLUMN active boolean; --track whether an avenger is active or not 
+ALTER TABLE avengers ALTER COLUMN active SET DEFAULT TRUE; --if you want to set default values dis is the way
+
+
+--Let's finally make a simple transaction
+
+BEGIN; --transaction starts
+
+INSERT INTO avengers (hero_name, hero_power, first_name, last_name, home_base_fk)
+			VALUES 	('Hawkeye', '20/20 vision and shooty boi', 'Clint', 'Burton', 'A Box'),
+					('Thor', 'Hammer Time', 'Thor', 'Odinson', 'Stark Tower');
+
+--let's say all avengers are active by default, but when we add some, they're false before they get a task
+UPDATE avengers SET active = FALSE WHERE hero_name = 'Hawkeye';
+UPDATE avengers SET active = FALSE WHERE hero_name = 'Thor';
+
+COMMIT; --save and end the transaction (you'll have to run this if a transaction fails too)
+
+
+SELECT * FROM avengers; --just so we can see the avengers without scrolling up
+
 

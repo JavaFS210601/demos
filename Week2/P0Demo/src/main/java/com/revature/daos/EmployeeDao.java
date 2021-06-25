@@ -26,7 +26,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			ResultSet rs = null; //we need this for select statements, so that the returned data can get stored
 			
 			//write the query, assign it to a String variable
-			String sql = "SELECT * FROM employees;"; 
+			String sql = "SELECT * FROM Krusty_Krab.employees;"; 
 			
 			//creating an object to send the query to our DB using our Connection object's createStatement() method
 			Statement s = conn.createStatement(); 

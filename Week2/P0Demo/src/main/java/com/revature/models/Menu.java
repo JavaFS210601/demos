@@ -54,6 +54,8 @@ public class Menu {
 				
 				//Print out each Employee from the List one by one for the user to see
 				for(Employee e : employees) {
+					//a prettier way to return all employees (instead of relying on the toString method, seen in the other cases)
+					//making use of a getter and String concatenation
 					System.out.println(e.getEmployee_id() + ") " + e.getF_name() + " " + e.getL_name() + ", Hired on " + e.getHire_date());
 				}
 				
@@ -130,9 +132,10 @@ public class Menu {
 				int idInput = scan.nextInt();
 				scan.nextLine();
 				
-				//example of some foolproofing 
+				//example of some foolproofing, in this case we don't want employees with id = 1 (aka managers) 
 				if(idInput == 1) {
 					System.out.println("can't fire managers!!!");
+					//LOG WARN
 				} else {
 					ed.removeEmployee(idInput);		
 				}
@@ -153,6 +156,9 @@ public class Menu {
 			
 				
 			}
+			
+
+			
 			
 		}
 		

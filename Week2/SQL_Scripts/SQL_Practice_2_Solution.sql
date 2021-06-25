@@ -69,6 +69,7 @@ insert into project_assignments (employee_id_fk, project_id_fk)
 			values (1,1),
 				   (2,1);
 				  
+	  
 				  
 select * from managers order by salary asc; 
 
@@ -81,4 +82,4 @@ update managers set salary = salary/2 where salary = 100000;
 select avg(salary) from employees; --avg function
 
 
-select f_name ||' is age '|| age as "Age Info" from employees; --concatenation
+select f_name ||' is age '|| age as "Age Info" from employees; --concatenation with alias
