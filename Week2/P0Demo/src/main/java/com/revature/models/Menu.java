@@ -7,10 +7,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.revature.daos.EmployeeDao;
+import com.revature.daos.RoleDao;
 
 public class Menu {
 	
+	//we need to instantiate the dao classes to use their methods in this class
 	EmployeeDao ed = new EmployeeDao();
+	RoleDao rd = new RoleDao();
 	
 	//All of the menu display options and control flow are contained in this method
 	public void display() {
@@ -35,9 +38,12 @@ public class Menu {
 			
 			//menu options
 			System.out.println("employees -> show all employees");
+			System.out.println("employeeByTitle -> get employees of a certain title"); //this is new as of Saturday - requires join!
 			System.out.println("add -> add a new employee ");
 			System.out.println("changerole -> change an employee's role");
 			System.out.println("fire -> fire an employee");
+			System.out.println("roleInfo -> get information about a certain role"); //this is new as of Saturday
+			System.out.println("changeSalary -> change a role's salary"); //this is new as of Saturday
 			System.out.println("exit -> exit the application");
 			
 			
@@ -63,6 +69,21 @@ public class Menu {
 				}
 				
 				break;
+			}
+			
+			case "employeebytitle": {
+				
+				System.out.println("Enter Employee Role to Search: (Case Sensitive! e.g. \\\"Fry Cook\\\")");
+				String roleInput = scan.nextLine(); //get user's input for Role to search by
+				
+				List<Employee> employees = ed.getEmployeesByRole(roleInput); //get the List of Employees from the dao
+				
+				for(Employee e : employees)
+				{
+					System.out.println(e); //print them out one by one via the enhanced for loop
+				}
+				break;				
+				
 			}
 			
 			case "add": {
@@ -143,6 +164,34 @@ public class Menu {
 					ed.removeEmployee(idInput);		
 				}
 				
+				break;
+			}
+			
+			case "roleinfo": {
+				
+				System.out.println("Which role title would you like to know more about? (Case Sensitive! e.g. \"Fry Cook\")");
+				String titleInput = scan.nextLine();
+				
+				List<Role> returnedRole = rd.getRoleByTitle(titleInput);
+				
+				for (Role r : returnedRole) {
+					System.out.println(r);
+				}
+				break;
+			}
+			
+			case "changesalary": {
+				
+				System.out.println("Enter Role Title to change: (Case Sensitive! e.g. \"Fry Cook\")");
+				String titleInput = scan.nextLine();
+				
+				System.out.println("Enter New Salary:");
+				int salaryInput = scan.nextInt();
+				scan.nextLine(); 
+				
+				rd.updateRoleSalary(salaryInput, titleInput);
+				
+				System.out.println(titleInput + " Salary has been changed to " + salaryInput);
 				break;
 			}
 			

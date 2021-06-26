@@ -14,6 +14,8 @@ public interface EmployeeDaoInterface {
 	
 	public void changeRole(int empId, int roleId); //change an employee's role_id given their employee_id
 	
-	public void removeEmployee(int empId);
+	public void removeEmployee(int empId); //delete an employee
+	
+	public List<Employee> getEmployeesByRole(String role); //return a List of employees of a certain role
 	
 }

@@ -156,6 +156,49 @@ public class EmployeeDao implements EmployeeDaoInterface {
 		
 	}
 
+		//Bit more complicated query, takes a parameter in order to have a more flexible menu option
+		@Override
+		public List<Employee> getEmployeesByRole(String title) {
+
+			try(Connection conn = ConnectionUtil.getConnection()){
+				ResultSet rs = null;
+				
+				String sql = "select * from employees join roles "
+						+ "on employees.role_id = roles.role_id where roles.role_title = ?;";
+
+				PreparedStatement ps = conn.prepareStatement(sql);
+
+				ps.setString(1, title); //insert the method's argument as the first (and only) variable in the query
+				
+				rs = ps.executeQuery();	
+				
+				List<Employee> employeeList = new ArrayList<>();
+				
+				while(rs.next()) { //while there are results in the result set...
+					
+					Employee e = new Employee( //create a new Employee Object from each returned row..
+							rs.getInt("employee_id"),
+							rs.getString("f_name"),
+							rs.getString("l_name"),
+							rs.getString("hire_date"),
+							rs.getInt("role_id")
+							);
+					
+					employeeList.add(e); //and populate the ArrayList with each created Role Object
+				}
+				
+				return employeeList; //Finally, return the populated List of Roles.
+				
+				
+				
+			} catch (SQLException e) {
+				System.out.println("Something went wrong with your SQL!");
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
+
 	
 	
 }
