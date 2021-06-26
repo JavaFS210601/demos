@@ -36,7 +36,6 @@ public class ConnectionUtil {
 		String password = System.getenv("password");
 		
 		
-		
 		//This is what returns our actual Connection object (note how this getConnection() method has a return type of Connection
 		return DriverManager.getConnection(url, username, password);
 		

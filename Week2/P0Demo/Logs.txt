@@ -1,0 +1,6 @@
+2021-06-26 14:34:15 INFO  Menu:52 - User select all employees
+2021-06-26 14:36:04 WARN  Menu:141 - User attempted to delete manager
+2021-06-26 14:37:01 INFO  Menu:52 - User select all employees
+2021-06-26 14:37:10 INFO  Menu:52 - User select all employees
+2021-06-26 14:37:16 INFO  Menu:52 - User select all employees
+2021-06-26 14:37:18 INFO  Menu:52 - User select all employees

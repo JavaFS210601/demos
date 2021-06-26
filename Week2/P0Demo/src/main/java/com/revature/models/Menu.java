@@ -3,6 +3,9 @@ package com.revature.models;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.daos.EmployeeDao;
 
 public class Menu {
@@ -12,10 +15,9 @@ public class Menu {
 	//All of the menu display options and control flow are contained in this method
 	public void display() {
 		
-		
 		boolean displayMenu = true; //this toggles whether the menu continues after user input
-		Scanner scan = new Scanner(System.in); //Scanner object to parse user input
-		
+		Scanner scan = new Scanner(System.in); //Scanner object to parse user input		
+		final Logger log = LogManager.getLogger(Menu.class);
 		
 		//greeting
 		System.out.println("*====================================================*");
@@ -47,6 +49,7 @@ public class Menu {
 			switch(input) {
 			
 			case "employees": {
+				log.info("User select all employees");
 				System.out.println("Gathering all employees...");
 
 				//List of Employees that gets populated by the getEmployees method in our EmployeeDao
@@ -135,7 +138,7 @@ public class Menu {
 				//example of some foolproofing, in this case we don't want employees with id = 1 (aka managers) 
 				if(idInput == 1) {
 					System.out.println("can't fire managers!!!");
-					//LOG WARN
+					log.warn("User attempted to delete manager");
 				} else {
 					ed.removeEmployee(idInput);		
 				}
