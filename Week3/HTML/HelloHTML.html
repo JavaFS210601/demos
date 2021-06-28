@@ -1,0 +1,120 @@
+<!DOCTYPE html> <!-- doctype declaration (not actually a tag) -->
+<html lang="en"> <!-- root tag: all our content must go in here -->
+
+<head> <!-- This is basically metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is what the open tab of you browser will say -->
+    <title>HELLOHTML</title> 
+</head>
+
+<body> <!-- The actual content of the webpage -->
+    
+    <h1> Hello HTML I'm a big header </h1>
+    <h6> Hello HTML I'm a small header </h6>
+
+    <p>I just built my own webpage!</p> <p> I'm a front end developer now! </p>
+
+    <br>
+    <br>
+
+    <div>
+        <span> What's your favorite element? </span>
+        <span> Mine is a span... </span> <span> The rest are aight too... </span>
+    </div>
+
+    <br>
+    <br>
+
+    <p>this wasn't here before! But I can just save my file and it'll show up</p>
+    <p>this is called "hot reloading"</p>
+
+    <br>
+    <br>
+
+    <!-- This is how we make a table -->
+    <table>
+        <thead> <!-- The header row(s) of the table -->
+            <tr> <!-- For rows of the header -->
+                <th>Name</th>
+                <th>Favorite Animal</th>
+            </tr>
+        </thead>
+
+        <tbody> <!-- The body rows of the table -->
+            <tr> <!-- A row in the body -->
+                <td>Nancy</td> <!-- "Table data" the values in the row cells -->
+                <td>Penguin</td>
+            </tr>
+
+            <tr>
+                <td>Noah</td>
+                <td>Frog</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <div>
+        <h3>Ben's Favorite Animals</h3>
+        <ol><!--ordered list-->
+            <li>Dogs</li>
+            <li>Capybaras</li>
+            <li>Axolotls</li>
+                <h4>Honorable Mentions:</h4>
+                <ul> <!-- Nested unordered list-->
+                    <li>Chinchilla</li>
+                    <li>Goblin Sharks</li>
+                </ul>
+        </ol>
+    </div>
+
+    <br>
+    <br>
+
+    <form> <!-- This is a form, it takes multiple different kinds of inputs -->
+        <label for="name">Put your name here:</label>
+        <input type="text" id="name" name="name" placeholder="Ex: John Smith">
+        <!-- these attributes lay out the TYPE of input, 
+            the ID (so it can be referenced),
+            the NAME, so that it behaves a specific way and is associated with other tags of the same name, 
+            and the PLACEHOLDER so there's an indicator of what goes here. -->
+
+        <br>
+
+        <p>You must choose:</p>
+
+        <!--Radio Button don't allow you to select more than one option at a time-->
+        <label for="radio1">ok</label>
+        <input type="radio" id="radio1" name="radio">
+
+        <label for="radio2">I will not choose!!!</label>
+        <input type="radio" id="radio2" name="radio">
+
+        <!--This Radio Button has a different name attribute from the others - we can select this one at the same time as others-->
+        <label for="radio3">I'm a rogue radio button</label>
+        <input type="radio" id="radio3" name="otherradio">
+
+        <br>
+
+        <p>How do you feel about your choice?</p>
+
+        <!--Check Boxes allow us to select multiple options at a time-->
+        <label for="check1">Overjoyed</label>
+        <input type="checkbox" id="check1" name="checkbox">
+
+        <label for="check2">Somber</label>
+        <input type="checkbox" id="check2" name="checkbox">
+
+        <label for="check3">Indifferent</label>
+        <input type="checkbox" id="check3" name="checkbox">
+
+    </form>
+
+</body>
+
+</html>

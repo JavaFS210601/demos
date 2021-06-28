@@ -40,6 +40,8 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			
 			while(rs.next()) { //while there are results left in the ResultSet (rs)
 				
+				System.out.println(rs.findColumn("employee_id"));
+				
 				//Create a new Employee Object from each returned record
 				//This is the Employee Class's all args constructor
 				//And we're filling it with each column of the Employee record
@@ -145,7 +147,9 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			
 			ps.setInt(1, empId);
 			
-			ps.executeUpdate();
+			if(ps.executeUpdate() != 0) {
+				System.out.println("yes");
+			}
 			
 			System.out.println("GEt out of here employee #" + empId);
 			

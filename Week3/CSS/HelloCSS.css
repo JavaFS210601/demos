@@ -1,0 +1,21 @@
+/* This is a comment in CSS */
+
+/* Element Selector - all matching elements will get these modifications*/
+
+p {
+    text-align: center;
+    color: rgb(53, 21, 46);
+}
+
+#header {
+    text-align: left;
+    color:darkmagenta;
+    transform: rotate(0.5turn);
+}
+
+.chanisClass {
+    /* If the first listed font isn't available, the second will take its place, followed by the third if necessary */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: lighter;
+}

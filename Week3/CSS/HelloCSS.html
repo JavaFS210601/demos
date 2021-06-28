@@ -1,0 +1,104 @@
+<!DOCTYPE html> <!-- doctype declaration (not actually a tag) -->
+<html lang="en"> <!-- root tag: all our content must go in here -->
+
+<head> <!-- This is basically metadata -->
+
+    <!-- This is how we can link to an external style sheet-->
+    <link rel="stylesheet" href="HelloCSS.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is what the open tab of you browser will say -->
+    <title>HELLOCSS</title> 
+
+    <!--This is how we apply CSS styling in the <head>... with the <style> tag! -->
+    <style>
+
+        /* we can list multiple elements to style using commas */
+        h1, h2, h3 {
+            background-color: rgb(150, 123, 89);
+        }
+
+        /* an * makes universal styling */
+        * {
+            background-color: darksalmon;
+        }
+
+    </style>
+
+</head>
+
+<body> <!-- The actual content of the webpage -->
+    
+    <h1 id="header"> Hello HTML I'm a big header </h1>
+    <h6 id="header"> Hello HTML I'm a small header </h6>
+
+    <!--To make this, I typed h1.chanish1.#coolid-->
+    <h1 class="chanisClass" id="coolid">You can say elementtag.classname.#idname to shorthand class and id names</h1>
+
+    <p>I just built my own webpage!</p> <p> I'm a front end developer now! </p>
+
+    <br>
+    <br>
+
+    <div class="chanisClass">
+        <span> What's your favorite element? </span>
+        <span> Mine is a span... </span> <span> The rest are aight too... </span>
+    </div>
+
+    <br>
+    <br>
+
+    <p>this wasn't here before! But I can just save my file and it'll show up</p>
+    <p>this is called "hot reloading"</p>
+
+    <br>
+    <br>
+
+    <!-- This is how we make a table -->
+
+    <!-- These are examples of inline styles! Specifically, we're making borders on this table -->
+    <table style="border: 3px dashed blue;">
+        <thead> <!-- The header row(s) of the table -->
+            <tr> <!-- For rows of the header -->
+                <th>Name</th>
+                <th>Favorite Animal</th>
+            </tr>
+        </thead>
+
+        <tbody> <!-- The body rows of the table -->
+            <tr> <!-- A row in the body -->
+                <td>Nancy</td> <!-- "Table data" the values in the row cells -->
+                <td>Penguin</td>
+            </tr>
+
+            <tr>
+                <td>Noah</td>
+                <td>Frog</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <!-- another example of a border -->
+    <div style="border: 5px solid black;">
+        <h3>Ben's Favorite Animals</h3>
+        <ol><!--ordered list-->
+            <li>Dogs</li>
+            <li>Capybaras</li>
+            <li>Axolotls</li>
+                <h4>Honorable Mentions:</h4>
+                <ul> <!-- Nested unordered list-->
+                    <li>Chinchilla</li>
+                    <li>Goblin Sharks</li>
+                </ul>
+        </ol>
+    </div>
+
+</body>
+
+</html>
