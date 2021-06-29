@@ -15,3 +15,4 @@
 2021-06-27 19:23:10 INFO  Menu:58 - User select all employees
 2021-06-27 19:23:40 INFO  Menu:58 - User select all employees
 2021-06-27 19:24:53 INFO  Menu:58 - User select all employees
+2021-06-28 17:37:40 INFO  Menu:58 - User select all employees

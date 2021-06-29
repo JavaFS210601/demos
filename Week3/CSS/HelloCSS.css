@@ -7,7 +7,7 @@ p {
     color: rgb(53, 21, 46);
 }
 
-#header {
+#header:hover {
     text-align: left;
     color:darkmagenta;
     transform: rotate(0.5turn);
