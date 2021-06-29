@@ -10,3 +10,17 @@ document.getElementById("middle").addEventListener("click", (event) => {console.
 
 document.getElementById("outer").addEventListener("click", (event) => {console.log("OUTER - capturing")}, capturing);
 
+//running these three event listeners alone will print only "OUTER - capturing" if you click the outer div
+//BUT it'll print all three, starting with the outermost element if you click the inner div 
+
+//now let's see bubbling work--------------------
+
+document.getElementById("inner").addEventListener("click", (event) => {console.log("INNER - bubbling")}, bubbling);
+
+document.getElementById("middle").addEventListener("click", (event) => {console.log("MIDDLE - bubbling")}, bubbling);
+
+document.getElementById("outer").addEventListener("click", (event) => {console.log("OUTER - bubbling")}, bubbling);
+
+
+//With bubbling, clicking the outermost element will just print "OUTER - bubbling" alone
+//BUT it'll print all three, starting with the innermost element if you click the inner div
