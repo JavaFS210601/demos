@@ -83,7 +83,7 @@ console.log(b); //now, printing out b works just fine
 
 console.log("==========================================(Local Scopes)");
 
-//block scope--------------------------
+//block scope---------------------------
 
 console.log(c); //print undefined because of hoisting (see the if statement)
 
@@ -106,3 +106,6 @@ function testScope() {
 
 testScope(); //actually call the function...
 
+
+
+var private = 3; 
