@@ -36,6 +36,9 @@ var tacoStand = {
     }
 }
 
+//class expression objects are inherently singletons
+//if we made a new tacoStand object with new attributes, the new one would override the old.
+
 console.log(tacoStand); //print the contents of the tacoStand variable 
 
 tacoStand.makeTaco(); //call the makeTaco() function of tacoStand
@@ -62,10 +65,11 @@ modernTacos.makeTaco(); //we can access this inherited function
 
 console.log(modernTacos); //we don't see the inherited properties - but they're there!
 
+//-------------------------------------------------------------------------
 
-
+//if you want a declared class to inherit from another, you'd use extends.
 class TacoStand2 extends TacoStand {
 
 }
 
-console.log(TacoStand2);
+console.log(TacoStand2); //print out the contents of TacoStand2
