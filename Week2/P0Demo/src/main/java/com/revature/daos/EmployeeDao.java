@@ -26,7 +26,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			ResultSet rs = null; //we need this for select statements, so that the returned data can get stored
 			
 			//write the query, assign it to a String variable
-			String sql = "SELECT * FROM Krusty_Krab.employees;"; 
+			String sql = "SELECT * FROM Krusty_Krab.employees;";
 			
 			//creating an object to send the query to our DB using our Connection object's createStatement() method
 			Statement s = conn.createStatement(); 
@@ -39,8 +39,6 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			
 			
 			while(rs.next()) { //while there are results left in the ResultSet (rs)
-				
-				System.out.println(rs.findColumn("employee_id"));
 				
 				//Create a new Employee Object from each returned record
 				//This is the Employee Class's all args constructor
@@ -147,9 +145,7 @@ public class EmployeeDao implements EmployeeDaoInterface {
 			
 			ps.setInt(1, empId);
 			
-			if(ps.executeUpdate() != 0) {
-				System.out.println("yes");
-			}
+			ps.executeUpdate();
 			
 			System.out.println("GEt out of here employee #" + empId);
 			

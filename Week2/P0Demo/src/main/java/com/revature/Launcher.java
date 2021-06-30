@@ -18,7 +18,6 @@ public class Launcher {
 			e.printStackTrace();
 		}
 		
-
 		
 		//Instantiate a Menu object so we can use the display() method
 		Menu menu = new Menu();

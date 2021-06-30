@@ -73,7 +73,7 @@ public class Menu {
 			
 			case "employeebytitle": {
 				
-				System.out.println("Enter Employee Role to Search: (Case Sensitive! e.g. \\\"Fry Cook\\\")");
+				System.out.println("Enter Employee Role to Search: (Case Sensitive! e.g. \"Fry Cook\")");
 				String roleInput = scan.nextLine(); //get user's input for Role to search by
 				
 				List<Employee> employees = ed.getEmployeesByRole(roleInput); //get the List of Employees from the dao
@@ -209,11 +209,7 @@ public class Menu {
 				
 			}
 			
-
-			
-			
 		}
-		
 		
 	}
 	
