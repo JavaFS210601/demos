@@ -1,7 +1,7 @@
 //PokeAPI endpoint - making a variable to hold the URL. Makes our script cleaner
 const api = 'https://pokeapi.co/api/v2/pokemon/';
 
-document.getElementById('btn').onclick = getData(); //when user clicks the button, getData() executes
+document.getElementById('btn').onclick = getData; //when user clicks the button, getData() executes
 //when you call a function with an event listener, don't call a function with parenthesis
 
 //getData will... get the data from our server (pokeapi)
