@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">  
+  <display-name>HelloServlets</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+	<!--  Welcome files? we can create a base HTML file and name it any of these things above  -->
+	<!--  When we hit the main endpoint of our program with a GET request, it'll return that file -->
+	<!--  Hence the name welcome file - you can think of it like a welcome page -->
+
+	
+	<!--  Welcome to the web.xml!!! This is where we'll define (aka map) our servlets... --> 
+	<!--  so that tomcat is aware of where the servlet is, and how to use it -->
+	<!--  You will be expected to know all these below tags and what they're for  -->
+	
+	
+	<!-- This defines our servlet in the web.xml -->
+	<servlet>
+		<display-name>HelloServlet</display-name>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.revature.servlets.HelloServlet</servlet-class>
+	</servlet>
+	
+	<!-- So we defined our servlet above, but now we need to actually MAP it... -->
+	<!-- This will map the above servlet to a URL location. The url-pattern is added to the base URL of the application -->
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	<!-- So if I send a request to my application's URL + /hello, it'll call the HelloServlet -->
+	<!-- The URL in the case of this application can be found when you run as -> run on server -->
+
+</web-app>
