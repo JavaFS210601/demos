@@ -23,7 +23,7 @@ public class SuccessServlet extends HttpServlet {
 		PrintWriter pw = res.getWriter(); 
 		//This res object will be forwarded. It'll have the request that was originall sent with the login
 		
-		pw.print("<h2> Welcome " + req.getParameter("userId") + "!"); //greet the user using the userId that was forwarded
+		pw.print("<h2> Welcome " + req.getParameter("userId") + "! </h2>"); //greet the user using the userId that was forwarded
 		
 		pw.print("<a href='https://purple.com'> Click here to go to purple.com</a>"); 
 		//when clicked, it'll redirect the user to purple.com 
