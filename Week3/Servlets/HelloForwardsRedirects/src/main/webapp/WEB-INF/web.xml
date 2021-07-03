@@ -24,6 +24,12 @@
 		<servlet-name>SuccessServlet</servlet-name>
 		<servlet-class>com.revature.servlets.SuccessServlet</servlet-class>
 	</servlet>
+	
+  <servlet>
+  	<display-name>LogoutServlet</display-name> 
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.LogoutServlet</servlet-class>
+  </servlet>
 
  <!-- Mapping our Servlets -->
  
@@ -37,5 +43,9 @@
  		<url-pattern>/success</url-pattern>
  	</servlet-mapping>
  
+	<servlet-mapping>
+	  	<servlet-name>LogoutServlet</servlet-name>
+	  	<url-pattern>/logout</url-pattern>
+	</servlet-mapping>  
  
 </web-app>
