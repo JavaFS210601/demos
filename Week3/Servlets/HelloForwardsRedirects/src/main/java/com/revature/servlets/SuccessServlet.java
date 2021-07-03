@@ -25,11 +25,17 @@ public class SuccessServlet extends HttpServlet {
 		
 		pw.print("<h2> Welcome " + req.getParameter("userId") + "! </h2>"); //greet the user using the userId that was forwarded
 		
-		pw.print("<a href='https://purple.com'> Click here to go to purple.com</a>"); 
-		//when clicked, it'll redirect the user to purple.com 
-		//note how the href attribute works - you can send the user anywhere!!! 
-		//Even make a new servlet for some logout functionality
+		pw.print("<a href='logout'>Click Here to Log Out.</a>"); //when clicked, it'll send a request to base url/+logout
+		//note how href works, you could send it anywhere, like www.google.com. But we're building a logout servlet.
 		
 	}
+	
+	//Note how this servlet can only take forwards... 
+			//By only using the service() method, we don't provide a way for anyone to access this servlet directly
+			
+			//Why is overriding the service() method considered bad practice?
+			//Because you should leave room for differentiation for methods
+			//You should want people to use the correct methods for what they want, they exist for a reason
+			//Much more readable this way too!!
 	
 }
