@@ -51,7 +51,7 @@ public class HomeDAO implements HomeInterface {
 			
 				return h; //return the home object
 			}
-			
+		
 			
 		} catch (SQLException e) {
 			System.out.println("Couldn't get home by name");

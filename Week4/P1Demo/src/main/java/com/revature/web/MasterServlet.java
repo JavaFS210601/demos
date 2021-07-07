@@ -7,9 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.AvengersController;
+
 //rememebr, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
 
+	private AvengersController ac = new AvengersController();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -25,10 +28,18 @@ public class MasterServlet extends HttpServlet {
 		//Now we want to write some code that will determine where requests get sent.
 		
 		String URI = req.getRequestURI().replace("/P1Demo/", "");
-		//getting the request URI, and stripping out the base path
-		//so we'll just be left with the URI to use in a switch
+		//getting the request URI, and stripping out the base URL
+		//so we'll just be left with the endpoint (e.g. "avengers", "login") to use in a switch
 		
+		switch(URI) {
 		
+		case "avengers": 
+			
+			ac.getAllAvengers(res); 
+		
+			
+		
+		}
 		
 	}
 	

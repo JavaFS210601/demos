@@ -10,11 +10,24 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- Declaring our servlets -->
+  <!-- Declaring our servlet -->
+  
+  <servlet>
+  	<display-name>MasterServlet</display-name>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<servlet-class>com.revature.web.MasterServlet</servlet-class>
+  </servlet>
+  
+  <!-- Mapping our servlet -->
+  
+  <servlet-mapping>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<url-pattern>/*</url-pattern> <!-- We want every request that comes into tomcat to hit the MasterServlet -->
+  								  <!-- We can map a servlet to every possible request with the * (like a wildcard) -->
+  </servlet-mapping>
   
   
   
-  <!-- Mapping our servlets -->
   
   
   
