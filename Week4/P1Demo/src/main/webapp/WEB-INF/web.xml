@@ -27,8 +27,18 @@
 
   
   
+  <!-- Just like how we need to declare and map servlets, we need to declare and map filters -->
+  <!-- Here, we're declaring and mapping our CORS filter, so that our front end can communicate -->
   
+  <filter>
+  	<filter-name>Cors</filter-name>
+  	<filter-class>com.revature.web.filters.CorsFilter</filter-class>
+  </filter>
   
+  <filter-mapping>
+  	<filter-name>Cors</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   
 </web-app>
