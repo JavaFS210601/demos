@@ -10,6 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- Declaring our servlets -->
+  
+  
+  
+  <!-- Mapping our servlets -->
   
   
   
