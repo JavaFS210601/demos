@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.revature.daos.AvengerDAO;
+
 //This Class contains the logic that gets a connection to our database
 //It will have a method called getConnection() that will return a Connection object
 //We will need these Connection object in our DAO layer to interact with our database
 public class ConnectionUtil {
 
+	public static AvengerDAO ad = new AvengerDAO();
 	
 	public static void main(String[] args) {
 			
@@ -19,6 +22,8 @@ public class ConnectionUtil {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
+			System.out.println(ad.getAllAvengers());
 	}
 	
 	

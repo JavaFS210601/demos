@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.controllers.AvengersController;
+import com.revature.controllers.AvengerController;
 
 //rememebr, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
 
-	private AvengersController ac = new AvengersController();
+	private AvengerController ac = new AvengerController();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -34,10 +34,8 @@ public class MasterServlet extends HttpServlet {
 		switch(URI) {
 		
 		case "avengers": 
-			
-			ac.getAllAvengers(res); 
 		
-			
+			ac.getAllAvengers(res); 
 		
 		}
 		

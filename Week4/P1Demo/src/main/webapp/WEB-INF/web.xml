@@ -23,8 +23,8 @@
   <servlet-mapping>
   	<servlet-name>MasterServlet</servlet-name>
   	<url-pattern>/*</url-pattern> <!-- We want every request that comes into tomcat to hit the MasterServlet -->
-  								  <!-- We can map a servlet to every possible request with the * (like a wildcard) -->
-  </servlet-mapping>
+  </servlet-mapping> 			  <!-- We can map a servlet to every possible request with the * (like a wildcard) -->
+
   
   
   
