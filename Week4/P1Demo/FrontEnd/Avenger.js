@@ -12,7 +12,7 @@ async function assembleFunc() { //async returns a promise (which fetch returns)
 
     //we will send a fetch request to get our avenger data
     //await wmakes the async functions wait until the promise returns with the fetched data
-    let response = await fetch(url + 'avengers');
+    let response = await fetch(url + 'avengers', {credentials: 'include'});
 
     if(response.status === 200) { //if the request is successful...
         console.log(response); //just to see what comes back for debug
@@ -96,6 +96,8 @@ async function loginFunc() {
         password:userp
     }
 
+    console.log(user);
+
     //now I'm going to set up my fetch request to the server
     //rememeber the second parameter a fetch() can take? 
     //a configuration object!! Essentially the settings of a fetch request
@@ -103,13 +105,15 @@ async function loginFunc() {
     let response = await fetch(url + "login", {
 
         method: "POST", //send as a POST request
-        mode: 'no-cors',
+        
         body: JSON.stringify(user), //turn into JSON
         credentials: 'include' //this will ensure that the cookie is captured
                               //future fetches will also require this value to send the cookie back
         //BTW we won't be using HTML forms anymore... it's too annoying to turn them into JSON
         //Don't worry too much, we will learn Angular and life will be grand
     });
+
+    console.log(response.status);
 
     //control flow based on success or failed login
     if(response.status === 200) {
