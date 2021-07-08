@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- This is our XMl version -->
+
+<!-- This is our doctype declaration -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+ 
+ <!-- This file is what we will use to configure HIBERNATE!!!! -->
+ 
+ <hibernate-configuration>
+ 
+ 	<session-factory>
+ 	
+ 	<!-- JDBC credentials --> <!-- So much easier than an entire ConnectionUtil class -->
+ 	<property name="hibernate.connection.username">postgres</property>
+ 	<property name="hibernate.connection.password">Sparky2014!!</property>
+ 	<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=Hibernate</property>
+ 	<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+ 	
+ 	<!-- Hibernate Properties -->
+ 	<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 	<property name="hibernate.default_schema">Hibernate</property>
+ 	
+ 	<!-- Hibernate Console Output --> <!-- These will just let us see our sql in the console -->
+ 	<property name="hibernate.show_sql">true</property>
+ 	<property name="hibernate.format_sql">true</property>
+ 	
+ 	<!-- DDL -->
+	<property name="hibernate.hbm2ddl.auto">create</property>
+	<!-- remember, create drops your tables at runtime, update will simply update them -->
+
+
+
+	<!-- We'll map our classes here... TBD --> 	
+
+
+
+
+
+ 	
+ 	</session-factory>
+ 
+ </hibernate-configuration>
+ 
+ 
+ 
