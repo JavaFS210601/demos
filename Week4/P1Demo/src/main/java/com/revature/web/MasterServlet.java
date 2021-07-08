@@ -35,9 +35,15 @@ public class MasterServlet extends HttpServlet {
 		
 		switch(URI) {
 		
-		case "avengers": 
+		case "avengers": //adding functionality to make the user have to log in before accessing all avengers
 		
-			ac.getAllAvengers(res); 
+			if(req.getSession(false) != null) { //if there is an active Session (which means the user is logged in)
+				ac.getAllAvengers(res); //doGet all avengers
+			} else {
+				res.setStatus(403); //forbidden - they aren't logged in so they can't get the goods
+				
+			}
+			
 			break;
 			
 		case "login": 

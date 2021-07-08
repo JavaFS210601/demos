@@ -53,14 +53,34 @@ public class LoginController {
 				
 				HttpSession ses = req.getSession(); //return a Session to hold user info (if one doesn't exist yet)
 				//remember, sessions are how you remember the differents users on the client
-				
+	
+//				info.log(
+//				
+//					Cookie[] cookies = req.getCookies();
+//					for (cookie : cookies) {
+//						System.out.println(cookie);
+//					}
+//				
+//				); //this is how I'd assume you can log cookies, getCookies returns an array
 				
 				//this info stays on the server, all the client gets is the request's cookie created by getSession()
 				//when a user gets a session, they get a cookie returned that uniquely identifies their session
+				ses.setAttribute("user", lDTO); //we'll probably just use a USer object if this was forreal
+				ses.setAttribute("loggedin", true);
 				
+				res.setStatus(200); //because login was successful
+				res.getWriter().print("Hi Login was successful"); //we won't see this message anywhere but postman
 				
+			} else {
+				HttpSession ses = req.getSession(false); //this will only return a session if one is already active
 				
+				if(ses != null) { //if a session exists...
+					ses.invalidate(); //kill the session
+				}
 				
+				res.setStatus(401); //unauthorized
+				res.getWriter().print("Login Invalidated"); //we won't see this message anywhere but postman
+					
 			}
 			
 		}
