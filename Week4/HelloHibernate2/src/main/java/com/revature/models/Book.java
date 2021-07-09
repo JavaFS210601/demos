@@ -40,8 +40,6 @@ public class Book {
 	 * 
 	 * EAGER - Returns the dependent object immediately without making a proxy object. This is generally less error prone
 	 * Why is EAGER less error prone? For starters, if you close a Session, proxies are no longer available
-	 * 
-	 * I tend to just use EAGER...
 	 */
 	
 	//Since Author can be null in this case, and since FetchType is set to LAZY...
@@ -129,12 +127,16 @@ public class Book {
 	}
 
 
-
+	//FIXING THE STACK OVERFLOW ERROR THAT OCCURED DUE TO INFINITE BACK AND FORTH REFERENCES BETWEEN BOOK AND AUTHOR.
+	//In the toString() method, I'm going to change the author object being referenced, to the first name and last name
+	//So now, instead of calling the Author object (which calls the Book object and so on)...
+	//We break the loop by simply getting the Author's full name
+	
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", author=" + author + "]";
+		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", author=" + 
+												author.getFirst_name() + " " + author.getLast_name() + "]";
 	}
-
 
 
 	public int getId() {
