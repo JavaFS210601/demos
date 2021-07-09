@@ -15,7 +15,7 @@
  	<!-- JDBC credentials --> <!-- So much easier than an entire ConnectionUtil class -->
  	<property name="hibernate.connection.username">postgres</property>
  	<property name="hibernate.connection.password">Sparky2014!!</property>
- 	<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=Hibernate</property>
+ 	<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=hibernate</property>
  	<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
  	
  	<!-- Hibernate Properties -->
@@ -28,16 +28,14 @@
  	
  	<!-- DDL -->
 	<property name="hibernate.hbm2ddl.auto">create</property>
-	<!-- remember, create drops your tables at runtime, update will simply update them -->
+	<!-- remember, create drops your tables at runtime, you won't want to use it if you want data to be saved -->
+	<!-- when what's update? update won't drop your tables, they'll update them with any changes. -->
 
 
-
-	<!-- We'll map our classes here... TBD --> 	
-
-
-
-
-
+	<!-- We'll map our classes here... The database won't recognize them as tables if you don't. --> 	
+	<mapping class="com.revature.models.Book"/>
+	<mapping class="com.revature.models.Author"/>
+	
  	
  	</session-factory>
  

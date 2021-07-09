@@ -52,13 +52,13 @@ public class LoginController {
 			if(ls.login(lDTO.username, lDTO.password)) { //if the username/password sent to the service are valid...
 				
 				HttpSession ses = req.getSession(); //return a Session to hold user info (if one doesn't exist yet)
-				//remember, sessions are how you remember the differents users on the client
+				//remember, sessions are how you remember the different users on the client
 	
-//				info.log(
+
 //				
 //					Cookie[] cookies = req.getCookies();
 //					for (cookie : cookies) {
-//						System.out.println(cookie);
+//						info.log(cookie);
 //					}
 //				
 //				); //this is how I'd assume you can log cookies, getCookies returns an array
@@ -68,6 +68,7 @@ public class LoginController {
 				ses.setAttribute("user", lDTO); //we'll probably just use a USer object if this was forreal
 				ses.setAttribute("loggedin", true);
 				
+		
 				res.setStatus(200); //because login was successful
 				res.getWriter().print("Hi Login was successful"); //we won't see this message anywhere but postman
 				

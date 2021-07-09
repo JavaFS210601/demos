@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.controllers.AvengerController;
 import com.revature.controllers.LoginController;
 
-//rememebr, this is our front controller - ALL requests that come in will have to hit this first.
+//remember, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
 
 	private AvengerController ac = new AvengerController();
@@ -37,12 +37,13 @@ public class MasterServlet extends HttpServlet {
 		
 		case "avengers": //adding functionality to make the user have to log in before accessing all avengers
 		
-			if(req.getSession(false) != null) { //if there is an active Session (which means the user is logged in)
+			
+			//if(req.getSession(false) != null) { //if there is an active Session (which means the user is logged in)
 				ac.getAllAvengers(res); //doGet all avengers
-			} else {
-				res.setStatus(403); //forbidden - they aren't logged in so they can't get the goods
+		//	} else {
+		//		res.setStatus(403); //forbidden - they aren't logged in so they can't get the goods
 				
-			}
+		//	}
 			
 			break;
 			

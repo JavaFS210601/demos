@@ -31,6 +31,8 @@ public class AvengerController {
 		//put the JSON into the response object (res)
 		res.getWriter().print(json);
 		
+		
+		
 		//override the default 404 status code that we set in the MasterServlet
 		res.setStatus(200);
 		
