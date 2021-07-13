@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* I'm going to add a background image in the global styling */
+html {
+    background: url("./assets/cool-blue-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+   
+    /*Messing around with some color options sorry about your eyes
+    background-color: rgb(147, 185, 123);
+    background-blend-mode: color-burn;*/
+}
+

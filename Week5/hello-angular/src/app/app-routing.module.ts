@@ -13,6 +13,8 @@ const routes: Routes = [
   component: DynamicComponentComponent
 }
 
+
+
 ];
 
 @NgModule({
