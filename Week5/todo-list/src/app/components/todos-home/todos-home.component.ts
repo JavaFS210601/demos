@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosHomeComponent implements OnInit {
 
+  //these variables are being referred to in our HTML page
   hiddenToggle:boolean = true;
+
+  greeterDiv:boolean = true;
+
+  name:string = "";
 
   //Creating some variables that will be the tasks on the To Do List webpage
   //These are variables that point to {objects} that represent each of our To Do tasks
@@ -57,6 +62,12 @@ export class TodosHomeComponent implements OnInit {
   toggleVisibility() {
     this.hiddenToggle = !this.hiddenToggle 
     //change the value of the "hiddenToggle" variable to the opposite of what it is
+  }
+
+  //when the user submits their name, it will hide the div that asks for the name 
+  //(by making the greeterDiv variable false. Structural directives!!!)
+  submitName() {
+    this.greeterDiv = false;
   }
 
 }
