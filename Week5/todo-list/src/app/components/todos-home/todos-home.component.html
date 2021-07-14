@@ -12,9 +12,9 @@
 </div>
 
 <br>
-<!--If the name variable is empty, it'll evaluate to false (since an empty string is falsy)-->
-<!-- BUT, is there IS something in the name variable, the *ngIf will display it, with Str. Interpolation -->
-<h2 *ngIf="name">Welcome, {{name}} </h2>
+<!--This *ngIf will be referring to the oppsite of greeterDiv -->
+<!-- When the submitName() function executes, !greeterDiv will become true, displaying this greeting-->
+<h2 *ngIf="!greeterDiv">Welcome, {{name}} </h2>
 <br>
 
 <div class="grid-container">
