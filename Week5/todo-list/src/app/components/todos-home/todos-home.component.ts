@@ -47,4 +47,13 @@ export class TodosHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //this function will change the status of a todo from "Incomplete" to "Complete"
+  toggleStatus(id:number) {
+    this.todosArray[id-1].status = "Complete";
+  }
+
+
+
+
+
 }

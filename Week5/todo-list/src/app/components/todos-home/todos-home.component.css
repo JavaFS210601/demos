@@ -1,7 +1,7 @@
 .grid-container{
     margin-top: 3em;
     display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5em;
   }
   .todo-card{

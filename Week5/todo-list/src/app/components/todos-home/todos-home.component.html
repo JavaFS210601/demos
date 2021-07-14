@@ -1,14 +1,38 @@
 <div class="grid-container">
 
     <div class="todo-card">
+        <!-- String Interpolation!! Taking TS values and putting them in our HTML -->
+        <!-- Grabbing these values from the todosArray -->
         <h2>Todo #{{todosArray[0].id}}</h2>
         <p>Task: {{todosArray[0].content}}</p>
         <p>Status: {{todosArray[0].status}}</p>
+
+        <!-- This button uses event binding to change the status to complete -->
+        <button (click)="toggleStatus(todosArray[0].id)">Complete Task</button>
     </div>
 
+    <div class="todo-card">
+        <h2>Todo #{{todosArray[1].id}}</h2>
+        <p>Task: {{todosArray[1].content}}</p>
+        <p>Status: {{todosArray[1].status}}</p>
 
+        <button (click)="toggleStatus(todosArray[1].id)">Complete Task</button>
+    </div>
 
+    <div class="todo-card">
+        <h2>Todo #{{todosArray[2].id}}</h2>
+        <p>Task: {{todosArray[2].content}}</p>
+        <p>Status: {{todosArray[2].status}}</p>
 
+        <button (click)="toggleStatus(todosArray[2].id)">Complete Task</button>
+    </div>
 
+    <div class="todo-card">
+        <h2>Todo #{{todosArray[3].id}}</h2>
+        <p>Task: {{todosArray[3].content}}</p>
+        <p>Status: {{todosArray[3].status}}</p>
+
+        <button (click)="toggleStatus(todosArray[3].id)">Complete Task</button>
+    </div>
 
 </div>
