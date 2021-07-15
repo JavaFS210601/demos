@@ -12,61 +12,32 @@
 </div>
 
 <br>
-<!--This *ngIf will be referring to the oppsite of greeterDiv -->
+<!--This *ngIf will be referring to the oppsite of greeterDiv (so it will be false by default)-->
 <!-- When the submitName() function executes, !greeterDiv will become true, displaying this greeting-->
 <h2 *ngIf="!greeterDiv">Welcome, {{name}} </h2>
 <br>
 
 <div class="grid-container">
 
+    <!-- Using the *ngFor structural directive, we can just write this card once! -->
+    <!-- It will populate once for every todo in the todosArray -->
     <!-- Using [property binding] on the "hidden" property to determine if this element is visible-->
-    <div class="todo-card" [hidden] = "hiddenToggle"> <!-- "hiddenToggle" refers to the TS variable -->
+    <div *ngFor = "let todo of todosArray" class="todo-card" [hidden] = "hiddenToggle"> 
+                                                    <!-- "hiddenToggle" refers to the TS variable -->
+
         <!-- {{String Interpolation}}!! Taking TS values and putting them in our HTML -->
         <!-- Grabbing these values from the todosArray -->
-        <h2>Todo #{{todosArray[0].id}}</h2>
-        <p>Task: {{todosArray[0].content}}</p>
-        <p>Status: {{todosArray[0].status}}</p>
+        <h2>Todo #{{todo.id}}</h2>
+        <p>Task: {{todo.content}}</p>
+        <p>Status: {{todo.status}}</p>
    
         <label for="updateBox1">Update Task?</label> 
         <!-- Two way binding! [(ngModel)] declares that this tag will take user input -->
-        <input id="updateBox1" [(ngModel)]="todosArray[0].content"/>
+        <input id="updateBox1" [(ngModel)]="todo.content"/>
         <!-- With this two way binding, we allow the user to update the task in the todo card-->
 
         <!-- This button uses (event binding) to change the status to complete -->
-        <button (click)="toggleStatus(todosArray[0].id)">Complete Task</button>
-    </div>
-
-    <div class="todo-card" [hidden] = "hiddenToggle">
-        <h2>Todo #{{todosArray[1].id}}</h2>
-        <p>Task: {{todosArray[1].content}}</p>
-        <p>Status: {{todosArray[1].status}}</p>
-
-        <label for="updateBox1">Update Task?</label>
-        <input id="updateBox1" [(ngModel)]="todosArray[1].content"/>
-
-        <button (click)="toggleStatus(todosArray[1].id)">Complete Task</button>
-    </div>
-
-    <div class="todo-card" [hidden] = "hiddenToggle">
-        <h2>Todo #{{todosArray[2].id}}</h2>
-        <p>Task: {{todosArray[2].content}}</p>
-        <p>Status: {{todosArray[2].status}}</p>
-
-        <label for="updateBox1">Update Task?</label>
-        <input id="updateBox1" [(ngModel)]="todosArray[2].content"/>
-
-        <button (click)="toggleStatus(todosArray[2].id)">Complete Task</button>
-    </div>
-
-    <div class="todo-card" [hidden] = "hiddenToggle">
-        <h2>Todo #{{todosArray[3].id}}</h2>
-        <p>Task: {{todosArray[3].content}}</p>
-        <p>Status: {{todosArray[3].status}}</p>
-
-        <label for="updateBox1">Update Task?</label>
-        <input id="updateBox1" [(ngModel)]="todosArray[3].content"/>
-
-        <button (click)="toggleStatus(todosArray[3].id)">Complete Task</button>
+        <button (click)="toggleStatus(todo.id)">Complete Task</button>
     </div>
 
     <!-- We're going to use event binding on a button that calls a function -->

@@ -10,7 +10,7 @@ const routes: Routes = [
 
 {
   path:"dynamic", //the endpoint "dynamic" will display the component below
-  component: DynamicComponentComponent
+  component: DynamicComponentComponent //this names the Class name of the component to display
 }
 
 
