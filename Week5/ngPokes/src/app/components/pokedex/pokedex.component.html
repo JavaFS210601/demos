@@ -1,1 +1,32 @@
-<p>pokedex works!</p>
+<div class="row">
+    <!-- Using two-way binding on an input field to a variable called input in the pokedex.component.ts-->
+    <!-- In order to use two-way binding with ngModel, we need to import the FormsModule in app.module.ts -->
+    <input class="col" type="number" [(ngModel)] = "input"/>
+
+    <!-- Event binding on this button to call the getPoke() function in pokedex.component.ts-->
+    <button class="btn btn-primary" (click)="getPoke()">Click to get Pokemon</button>
+</div>
+
+<!-- I want to create a table to hold the information of the Pokemon I want to display -->
+<table class = "table table-dark"> <!-- BEN!!!!!!! DON'T FORGET THE NGIF -->
+
+    <!-- Headers to label the pokemon info we're populating -->
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Types</th>
+            <th scope="col">Sprite</th>
+        </tr>
+    </thead>
+
+    <!-- Based on the pokemon observable object we get, we'll populate these <td> tags with data-->
+    <tbody>
+        <tr>
+            <td> </td>
+            <td> </td> <!-- leaving this empty til tomorrow -->
+            <td> </td>
+        </tr>
+    </tbody>
+
+</table>
+

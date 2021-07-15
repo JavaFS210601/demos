@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm"> <!-- Some navbar classes I think look neat -->
+
+    <ul class="navbar-nav"> <!-- unordered list, to store options in my navbar -->
+
+        <!-- The List Items in this navbar will have the class nav-link -->
+        <!-- nav-link lets us change the routerLink the user is on, thus using our routes -->
+        <!-- <a> is a tag that lets us link from one view to another -->
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="welcome">Welcome Page</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="pokedex">Find Pokemon</a>
+        </li>
+
+    </ul>
+</nav>
