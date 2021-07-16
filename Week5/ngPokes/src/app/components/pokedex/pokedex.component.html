@@ -25,7 +25,8 @@
             <!-- String interpolation to get the values of pokemon into our DOM -->
             <td>{{pokemon.name}}</td>
             <td> {{pokemon.types[0].type.name}} 
-                <span *ngIf="pokemon.types.length>1">{{pokemon.types[1].type.name}}</span>
+                <!-- we're using a pipe here to format our two pokemon types better-->
+                <span *ngIf="pokemon.types.length>1">{{pokemon.types[1].type.name | poketype}}</span>
             </td> 
             <td><img src={{pokemon.sprites.front_shiny}}></td>
         </tr>
