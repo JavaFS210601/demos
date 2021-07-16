@@ -22,6 +22,6 @@ export class PokedexComponent implements OnInit {
   }
 
   //GETPOKE FUNCTION GOES HERE
-
+  
 
 }
