@@ -31,7 +31,7 @@ public class Author {
 	//what is mappedBy? It's the field in the Book Class that references the Author class 
 	//(the Book Class has an "author" field)
 	//Super necessary if we want this to act like a ManyToMany Relationship
-
+	//So when we create a Book, this anthology field links the Book the Author
 	
 	//boilerplate code below-------------------------------
 	
