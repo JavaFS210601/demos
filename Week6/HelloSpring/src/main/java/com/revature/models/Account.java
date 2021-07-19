@@ -2,6 +2,9 @@ package com.revature.models;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Repository;
+
+@Repository //All stereotype annotations make a class a bean... @Repository is usually for DAO classes though!
 public class Account {
 
 	private double balance;

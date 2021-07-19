@@ -2,11 +2,19 @@ package com.revature.models;
 
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component //generic stereotype annotation - this makes the class a bean!
+@Scope("prototype")
 public class User {
 
 	private int id;
 	private String name;
 	
+	//@Autowired //Autowiring beans using FIELD INJECTION (1 of the 3 types of dependency injection)
+	//This method of dependency injection is considered bad practice because it skips encapsulation
 	private Account account; //the User class has an Account field. Thus we can say Account is a dependency here
 
 
@@ -30,6 +38,12 @@ public class User {
 		super();
 		this.name = name;
 		this.account = account;
+	}
+
+	//we're adding a new constructor for only Users, cause we need it for the Config class bean creation method
+	@Autowired //Autowiring beans using CONSTRUCTOR INJECTION (1 of the 3 types of dependency injection)
+	public User(Account account2) {
+		this.account = account2;
 	}
 
 	@Override
@@ -74,6 +88,7 @@ public class User {
 		return account;
 	}
 
+	//@Autowired //Autowiring beans using SETTER INJECTION (1 of the 3 types of dependency injection)
 	public void setAccount(Account account) {
 		this.account = account;
 	}

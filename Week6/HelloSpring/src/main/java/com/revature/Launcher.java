@@ -1,8 +1,10 @@
 package com.revature;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.revature.config.Config;
 import com.revature.models.User;
 
 public class Launcher {
@@ -12,6 +14,8 @@ public class Launcher {
 		//Creating an Application Context Spring Container in order to use our Beans
 		//All you need to know is that this longggg method takes our XML and makes an ApplicationContext (to store beans)
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//ApplicationContext ac = new AnnotationConfigApplicationContext(Config.class);
+		
 		
 		//so now that we have a Spring Container that is storing our User and Account beans, we can make some! 
 		
@@ -33,6 +37,18 @@ public class Launcher {
 		u.getAccount().setType("Savings");
 		
 		System.out.println(u); //we now have a User object with an Account object, all fully initialized with values
+		
+		System.out.println("=========================");
+		
+		//Recall bean scopes - Beans are singletons by default
+		//If we made our User bean "prototype" scopes, this would return a different user from User u
+		User u2 = (User) ac.getBean("user");
+		System.out.println(u2);
+		u2.setName("Chani");
+		System.out.println(u2);
+		System.out.println(u);
+		
+		//since we never set account to change off of singleton scope, every User still has the same Account
 		
 	}
 	
