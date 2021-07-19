@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The applicationContext.xml is how we register, create, and inject Spring Beans -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- We need the <beans> tag and its configurations in order for this xml to be used for Spring -->
+
+
+<!-- Here, we're declaring and wiring our beans in XML (which we don't usually prefer... -->
+<!-- The only real reason you'd do it this way is if you don't have access to the class to use annotations -->
+
+<!-- Account Bean -->
+
+<bean name="account" class="com.revature.models.Account"></bean>
+
+<!-- User Bean -->
+
+<bean name="user" class="com.revature.models.User">
+<!-- The User class has a reference to the Account class, so we need to WIRE the account bean -->
+	<!-- This is XML autowiring byName -->
+<!-- name is the name of the field in the User Class (account), ref is the name of bean being references (also account) -->
+	<property name="account" ref="account"></property>
+</bean>
+
+
+</beans>
