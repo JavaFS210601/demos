@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  
   <display-name>HelloSpringMVC</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -9,4 +10,35 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- First, we want to tell our application how to build our ApplicationContext (our Spring IoC Container) -->
+  <context-param>
+  	<param-name>contextConfiguration</param-name>
+  	<param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <!-- We need ContextLoaderListener to tie everything together - tomact will be aware of ApplicationContext -->
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- We don't have to design our Servlet, but we will have to decalre and map it still -->
+  <servlet>
+  	<servlet-name>DispatcherServlet</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	
+  	<!-- This stuff below defines where we put our configuration file for this Servlet -->
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/dispatcherContext.xml</param-value>
+  	</init-param>
+  </servlet>
+  
+  <!-- Finally, we map the DispatcherServlet as usual -->
+  <servlet-mapping>
+  	<servlet-name>DispatcherServlet</servlet-name>
+  	<url-pattern>/</url-pattern> <!-- I learned we don't need the *, it can just be / -->
+  </servlet-mapping>
+  
+  
 </web-app>
