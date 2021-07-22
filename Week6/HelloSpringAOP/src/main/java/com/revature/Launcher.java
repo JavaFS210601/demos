@@ -25,15 +25,16 @@ public class Launcher {
 		
 		//Give values to this new Avenger
 		a2.setAveId(6);
-		a2.setAveName("Squirell Girl");
-		a2.setPower("Power of Squirell (very stronk)");
+		a2.setAveName("Squirrel Girl");
+		a2.setPower("Power of Squirrel (very stronk)");
 		a2.setFirstName("Doreen");
 		a2.setLastName("Green");
 		a2.setPowerLevel(9001);
 		
 		System.out.println(a2);
 		
-		
+		//making squirrel girl fight
+		System.out.println(dao.fight(a2, "Plot Sword"));
 		
 	}
 

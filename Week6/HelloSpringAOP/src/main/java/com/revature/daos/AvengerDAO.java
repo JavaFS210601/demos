@@ -36,6 +36,12 @@ public class AvengerDAO {
 		
 	}
 	
+	public String fight(Avenger a, String attack) {
+		
+		return new String(a.getAveName() + " attacks a bad guy with " + attack);
+		
+	}
+	
 	
 
 }
