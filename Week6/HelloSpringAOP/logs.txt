@@ -1,0 +1,7 @@
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=0, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveId(int)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveName(String)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=Squirell Girl, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setPower(String)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=Squirell Girl, power=Power of Squirell (very stronk), firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setFirstName(String)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=Squirell Girl, power=Power of Squirell (very stronk), firstName=Doreen, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setLastName(String)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=Squirell Girl, power=Power of Squirell (very stronk), firstName=Doreen, lastName=Green, powerLevel=0] invoked void com.revature.models.Avenger.setPowerLevel(int)
+2021-07-22 16:14:05 INFO  LoggingAspect:21 - Avenger [aveId=6, aveName=Squirell Girl, power=Power of Squirell (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
