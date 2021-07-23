@@ -23,7 +23,7 @@ public class Launcher {
 		//Make a new Avenger bean so we can make a brand new Avenger
 		Avenger a2 = ac.getBean(Avenger.class);
 		
-		//Give values to this new Avenger
+		//Give values to this new Avenger 
 		a2.setAveId(6);
 		a2.setAveName("Squirrel Girl");
 		a2.setPower("Power of Squirrel (very stronk)");
@@ -35,6 +35,15 @@ public class Launcher {
 		
 		//making squirrel girl fight
 		System.out.println(dao.fight(a2, "Plot Sword"));
+		
+		
+		//making groot fight (displaying the first option in @Around)
+		Avenger a3 = dao.getById(4);
+		System.out.println(dao.fight(a3, "vine whip"));
+		
+		//making black widow fight (displaying the second option in @Around)
+		Avenger a4 = dao.getById(3);
+		System.out.println(dao.fight(a4, "chop"));
 		
 	}
 
