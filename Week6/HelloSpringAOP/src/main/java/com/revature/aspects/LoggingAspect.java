@@ -37,13 +37,23 @@ public class LoggingAspect {
 	//@Around is the more complicated annotation to use, but it's definitely the most powerful
 	//It has the ability to start and stop method execution
 	@Around("execution(String fight(..))")
-	public void logAttackSuccess(ProceedingJoinPoint pjp) { //ProceedingJoinPoint is the JoinPoint used for @Around
+	//ProceedingJoinPoint is the JoinPoint used for @Around
+	public String logAttackSuccess(ProceedingJoinPoint pjp) throws Throwable { 
 		Avenger a = (Avenger) pjp.getArgs()[0]; //getArgs() will retrieve parameter values from the given method (fight)
 		String s = (String) pjp.getArgs()[1]; //then we use getArgs() again to get the String parameter of fight()
 		
+		log.warn(a.getAveName() + " is trying to fight!!!");
 		
+		if(a.getAveName().equals("Groot")) {
+			log.info(a.getAveName() + " doesn't fight anymore, he's an accountant");
+			log.warn("THE FIGHT METHOD WAS NOT CALLED!!!");
+			return "Looks like no fight happened :(";
+		} else {
+			String fightString = (String) pjp.proceed(); //this will actually allow the fight() method to run
+			log.info("THE FIGHT METHOD RAN!!!");
+			return fightString;
+		}
 		
 	}
-	
-	
+
 }

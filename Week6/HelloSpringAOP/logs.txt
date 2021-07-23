@@ -21,3 +21,71 @@
 2021-07-22 16:50:22 INFO  LoggingAspect:22 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
 2021-07-22 16:50:22 INFO  LoggingAspect:22 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
 2021-07-22 16:50:22 INFO  LoggingAspect:29 - com.revature.daos.AvengerDAO@143d9a93 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Squirrel Girl attacks a bad guy with Plot Sword
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=0, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveId(int)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveName(String)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setPower(String)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setFirstName(String)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setLastName(String)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=0] invoked void com.revature.models.Avenger.setPowerLevel(int)
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:46:16 WARN  LoggingAspect:45 - Squirrel Girl is trying to fight!!!
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:46:16 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:46:16 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Squirrel Girl attacks a bad guy with Plot Sword
+2021-07-23 10:46:16 INFO  LoggingAspect:52 - THE FIGHT METHOD RAN!!!
+2021-07-23 10:46:16 WARN  LoggingAspect:45 - Groot is trying to fight!!!
+2021-07-23 10:46:16 INFO  LoggingAspect:48 - Groot doesn't fight anymore, he's an accountant
+2021-07-23 10:46:16 WARN  LoggingAspect:49 - THE FIGHT METHOD WAS NOT CALLED!!!
+2021-07-23 10:46:16 WARN  LoggingAspect:45 - Black Widow is trying to fight!!!
+2021-07-23 10:46:16 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Black Widow attacks a bad guy with chop
+2021-07-23 10:46:16 INFO  LoggingAspect:52 - THE FIGHT METHOD RAN!!!
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=0, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveId(int)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveName(String)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setPower(String)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setFirstName(String)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setLastName(String)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=0] invoked void com.revature.models.Avenger.setPowerLevel(int)
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
+2021-07-23 10:47:40 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:47:40 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@143d9a93 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Squirrel Girl attacks a bad guy with Plot Sword
+2021-07-23 10:47:40 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@143d9a93 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Groot attacks a bad guy with vine whip
+2021-07-23 10:47:40 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@143d9a93 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Black Widow attacks a bad guy with chop
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=0, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveId(int)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveName(String)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setPower(String)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setFirstName(String)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setLastName(String)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=0] invoked void com.revature.models.Avenger.setPowerLevel(int)
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:48:26 WARN  LoggingAspect:45 - Squirrel Girl is trying to fight!!!
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:48:26 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:48:26 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Squirrel Girl attacks a bad guy with Plot Sword
+2021-07-23 10:48:26 INFO  LoggingAspect:52 - THE FIGHT METHOD RAN!!!
+2021-07-23 10:48:26 WARN  LoggingAspect:45 - Groot is trying to fight!!!
+2021-07-23 10:48:26 INFO  LoggingAspect:48 - Groot doesn't fight anymore, he's an accountant
+2021-07-23 10:48:26 WARN  LoggingAspect:49 - THE FIGHT METHOD WAS NOT CALLED!!!
+2021-07-23 10:48:26 WARN  LoggingAspect:45 - Black Widow is trying to fight!!!
+2021-07-23 10:48:26 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Black Widow attacks a bad guy with chop
+2021-07-23 10:48:26 INFO  LoggingAspect:52 - THE FIGHT METHOD RAN!!!
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=0, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveId(int)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=null, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setAveName(String)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=null, firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setPower(String)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=null, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setFirstName(String)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=null, powerLevel=0] invoked void com.revature.models.Avenger.setLastName(String)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=0] invoked void com.revature.models.Avenger.setPowerLevel(int)
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.toString()
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:52:21 WARN  LoggingAspect:45 - Squirrel Girl is trying to fight!!!
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:52:21 INFO  LoggingAspect:26 - Avenger [aveId=6, aveName=Squirrel Girl, power=Power of Squirrel (very stronk), firstName=Doreen, lastName=Green, powerLevel=9001] invoked String com.revature.models.Avenger.getAveName()
+2021-07-23 10:52:21 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Squirrel Girl attacks a bad guy with Plot Sword
+2021-07-23 10:52:21 INFO  LoggingAspect:53 - THE FIGHT METHOD RAN!!!
+2021-07-23 10:52:21 WARN  LoggingAspect:45 - Groot is trying to fight!!!
+2021-07-23 10:52:21 INFO  LoggingAspect:48 - Groot doesn't fight anymore, he's an accountant
+2021-07-23 10:52:21 WARN  LoggingAspect:49 - THE FIGHT METHOD WAS NOT CALLED!!!
+2021-07-23 10:52:21 WARN  LoggingAspect:45 - Black Widow is trying to fight!!!
+2021-07-23 10:52:21 INFO  LoggingAspect:33 - com.revature.daos.AvengerDAO@2caf6912 invoked String com.revature.daos.AvengerDAO.fight(Avenger,String) returning Black Widow attacks a bad guy with chop
+2021-07-23 10:52:21 INFO  LoggingAspect:53 - THE FIGHT METHOD RAN!!!
