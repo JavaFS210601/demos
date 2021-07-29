@@ -1,0 +1,28 @@
+server:
+  port: 8092 #this is how we set ports in .yaml
+
+#We have to indiciate that this service is a gateway service
+#And we also have to register each service and their paths
+
+spring:
+  application.name: gateway
+  cloud:
+    gateway:
+      default-filters:
+      - PrefixPath=/ #This is like the context path, AKA the base path to this service (we'll leave it empty)
+      routes: #under routes: we're setting up thee routes/paths to our different services
+      #=============================================
+      - id: flashcard #This name can be anything... but make it make sense :)
+        uri: http://localhost:8090
+        predicates:
+        - Path=/flashcard/** #So when I send something to /flashcard, it'll go to 8090 first,
+                             #which will send it to the flashcard controller, and a certain method depending on the requests's endpoint
+      #=============================================
+      - id: quiz #This name can be anything... but make it make sense :)
+        uri: http://localhost:8091
+        predicates:
+        - Path=/quiz/** #So when I send something to /quiz, it'll go to 8090 first,
+                        #which will send it to the quiz controller, and a certain method depending on the requests's endpoint
+
+#This application.yml makes the gateway service aware of all of the other services in our application
+#Thanks to the routes, we can just send requests to this gateway service port instead of changing the port in each request
